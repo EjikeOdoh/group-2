@@ -1,0 +1,13 @@
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+
+.option label {
+    font-size: 1.125rem;
+    color: #1E1E1E;
+}

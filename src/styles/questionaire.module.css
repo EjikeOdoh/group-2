@@ -1,0 +1,66 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.navbar button {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.closeBtn {
+    color: #1B3B6F;
+}
+
+.parent {
+    flex: 1;
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    width: 600px;
+    margin: auto;
+}
+
+.myForm {
+    display: grid;
+    gap: 40px;
+    padding: 16px 24px;
+    margin-bottom: 40px;
+}
+
+.options {
+    display: grid;
+    gap: 32px;
+}
+
+.myForm h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.myForm h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.myForm .input {
+    height: 50px;
+    border-radius: 12px;
+    border: 1.5px solid #E5E7EA;
+    font-size: 1rem;
+    padding: 12px;
+
+}

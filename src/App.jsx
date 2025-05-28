@@ -1,10 +1,13 @@
 
 import './App.css'
+import Questionaire from './pages/Questionaire'
 
 function App() {
 
   return (
-    <h1>App</h1>
+    <>
+      <Questionaire />
+    </>
   )
 }
 

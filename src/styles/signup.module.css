@@ -1,0 +1,41 @@
+.container {
+    display: grid;
+    gap: 24px;
+    padding-block: 32px;
+}
+
+.container h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-border);
+}
+
+.myForm {
+    display: grid;
+    gap: 16px;
+}
+
+.myForm > p {
+    font-size: 0.75rem;
+    color: var(--primary-border);
+}
+
+.alt {
+    color: var(--black);
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.btns {
+    display: grid;
+    gap: 16px;
+}
+
+.ownAccount {
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+.ownAccount span {
+    font-weight: 600;
+}

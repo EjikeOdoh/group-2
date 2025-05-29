@@ -2,9 +2,17 @@
 :root {
   --text: #1E1E1E;
   --text-secondary: #6D717F;
+  --alt-secondary-text: #A0A0A0;
   --primary: #4D91CC;
+  --gray-text: #9EA2AE;
+
 
   --primary-border: #333333;
+  --border: #B8C2D2;
+
+  --light-bg: #E7F4FF;
+  --dark: #131927;
+  --black: #000000;
 }
 
 * {

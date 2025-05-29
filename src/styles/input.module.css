@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    gap: 8px;
+}
+
+.container label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary-border);
+}
+
+.input {
+    border: 1px solid var(--border);
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding-inline: 12px;
+    gap: 18px;
+}
+
+.input input {
+    flex: 1;
+    outline: none;
+    font-size: 0.875rem;
+}
+
+.input input::placeholder {
+    color: var(--gray-text);
+}
+
+.input small {
+    font-size: 0.875rem;
+    color: var(--primary-border);
+}

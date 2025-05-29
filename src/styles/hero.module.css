@@ -1,0 +1,25 @@
+
+.container {
+    padding: 80px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.texts {
+    display: grid;
+    gap: 20px;
+}
+
+.texts h1 {
+    color: var(--primary-border);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.texts p {
+    color: var(--alt-secondary-text);
+    font-size: 1.5rem;
+    font-weight: 400;
+}

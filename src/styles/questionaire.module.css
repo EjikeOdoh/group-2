@@ -18,6 +18,10 @@
     gap: 8px;
 }
 
+.navbar span {
+    font-weight: 600;
+}
+
 .closeBtn {
     color: #1B3B6F;
 }
@@ -36,7 +40,6 @@
 .myForm {
     display: grid;
     gap: 40px;
-    padding: 16px 24px;
     margin-bottom: 40px;
 }
 
@@ -49,11 +52,14 @@
     font-family: "Manrope", sans-serif;
     font-size: 2rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .myForm h2 {
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: "Manrope", sans-serif;
+
 }
 
 .myForm .input {

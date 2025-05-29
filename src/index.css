@@ -1,3 +1,12 @@
+
+:root {
+  --text: #1E1E1E;
+  --text-secondary: #6D717F;
+  --primary: #4D91CC;
+
+  --primary-border: #333333;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +18,19 @@ img {
   object-fit: cover;
 }
 
-button {
+button, input {
   border: none;
   background: none;
   cursor: pointer;
+  height: 50px;
+  border-radius: 12px;
+  font-family: inherit;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   max-width: 1440px;
   margin: auto;
-  max-height: 1200px;
+  min-height: 100svh;
+  color: var(--text);
 }

@@ -1,7 +1,5 @@
 .btn {
-    background-color: #4D91CC;
-    height: 50px;
-    border-radius: 12px;
+    background-color: var(--primary);
     color: #F7F7F7;
     font-size: 1.125rem;
     display: flex;
@@ -9,4 +7,5 @@
     align-items: center;
     gap: 8px;
     width: 100%;
+
 }

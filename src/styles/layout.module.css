@@ -1,6 +1,10 @@
 .container {
-    height: 100svh;
+    height: 100%;
     display: grid;
     grid-template-columns:500px 1fr;
     gap: 20px;
+}
+
+.container > div:first-of-type img {
+    height: 100%;
 }

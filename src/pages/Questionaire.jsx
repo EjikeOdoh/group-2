@@ -7,9 +7,25 @@ import { IoIosArrowRoundBack } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import Button from '../components/Button'
 import { FaArrowRight } from 'react-icons/fa'
+import { useFormState } from 'react-dom'
+
+
+
 export default function Questionaire() {
 
   const [index, setIndex] = useState(1)
+  const [formData, setFormData] = useState({})
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setFormData(prev=>({...prev, [name]: value}))
+
+  }
+
+  const handleSubmit =(e) => {
+    e.preventDefault()
+    console.log(formData)
+  }
 
   const nextQuestion = () => {
     setIndex(prev => prev + 1)
@@ -19,7 +35,7 @@ export default function Questionaire() {
     setIndex(
       prev => {
         if (prev === 1) {
-          return
+          return 1
         } else {
           return prev - 1
         }
@@ -41,7 +57,7 @@ export default function Questionaire() {
             <button onClick={prevQuestion}>
               <IoIosArrowRoundBack />
               Back</button>
-            <p>{index} out of 10 questions</p>
+            <p><span>{index}</span> out of 10 questions</p>
             <button className={styles.closeBtn}>
               <IoClose />
             </button>
@@ -50,7 +66,7 @@ export default function Questionaire() {
           <div className={styles.parent}>
 
             <div className={styles.content}>
-              <form className={styles.myForm} action={getInfo}>
+              <form className={styles.myForm}>
                 {/* First questions */}
 
                 {
@@ -60,10 +76,10 @@ export default function Questionaire() {
                     <h2>What is your age?</h2>
 
                     <div className={styles.options}>
-                      <Option label='age' value="18-24" />
-                      <Option label='age' value="25-30" />
-                      <Option label='age' value="31-36" />
-                      <Option label='age' value="37 or older" />
+                      <Option label='age' value="18-24" handleChange={handleChange} />
+                      <Option label='age' value="25-30" handleChange={handleChange} />
+                      <Option label='age' value="31-36" handleChange={handleChange} />
+                      <Option label='age' value="37 or older" handleChange={handleChange} />
                     </div>
                   </> : null
                 }
@@ -73,7 +89,7 @@ export default function Questionaire() {
                   index === 2 ?
                     <>
                       <h2>Where do you live ?</h2>
-                      <input className={styles.input} type="text" placeholder="Enter your Location" />
+                      <input className={styles.input} type="text" placeholder="Enter your Location" name='location' onChange={handleChange} />
                     </>
                     : null
                 }
@@ -84,11 +100,11 @@ export default function Questionaire() {
                     <>
                       <h2>Marital Status</h2>
                       <div className={styles.options}>
-                        <Option label='maritalStatus' value="Single" />
-                        <Option label='maritalStatus' value="Married" />
-                        <Option label='maritalStatus' value="Divorced" />
-                        <Option label='maritalStatus' value="Widowed" />
-                        <Option label='maritalStatus' value="Rather not say" />
+                        <Option label='maritalStatus' value="Single" handleChange={handleChange} />
+                        <Option label='maritalStatus' value="Married" handleChange={handleChange} />
+                        <Option label='maritalStatus' value="Divorced" handleChange={handleChange} />
+                        <Option label='maritalStatus' value="Widowed" handleChange={handleChange} />
+                        <Option label='maritalStatus' value="Rather not say" handleChange={handleChange} />
                       </div>
 
                     </>
@@ -106,10 +122,10 @@ export default function Questionaire() {
                         <small>(Select all that apply)</small>
                       </div>
                       <div className={styles.options}>
-                        <Option label='childhoodIllness' value="Chicken Pox" />
-                        <Option label='childhoodIllness' value="Mumps" />
-                        <Option label='childhoodIllness' value="Measles" />
-                        <Option label='childhoodIllness' value="None" />
+                        <Option label='childhoodIllness' value="Chicken Pox" handleChange={handleChange} />
+                        <Option label='childhoodIllness' value="Mumps" handleChange={handleChange} />
+                        <Option label='childhoodIllness' value="Measles" handleChange={handleChange} />
+                        <Option label='childhoodIllness' value="None" handleChange={handleChange} />
                       </div>
 
                     </>
@@ -230,7 +246,7 @@ export default function Questionaire() {
                 }
 
                 {
-                  index === 10 ? <Button label="Submit" /> : null
+                  index === 10 ? <Button label="Submit" handleClick={handleSubmit} /> : null
                 }
 
 

@@ -2,7 +2,7 @@ import styles from '../styles/landingPage.module.css'
 import Logo from '../images/logo.svg'
 import Drug from '../images/medication.png'
 import { TbNotes } from 'react-icons/tb'
-import { FaInstagram, FaPlus } from 'react-icons/fa'
+import { FaInstagram, FaMinus, FaPlus } from 'react-icons/fa'
 import { CiLinkedin, CiTwitter } from 'react-icons/ci'
 
 // images for card components
@@ -56,7 +56,9 @@ function Item(props) {
             <div className={styles.question}>
                 <p style={props.active === true ? { fontWeight: 600 } : undefined}>{props.question}</p>
                 <button onClick={() => props.handleClick(props.id)}>
-                    <FaPlus />
+                   {
+                    props.active === true ? <FaMinus /> :  <FaPlus />
+                   }
                 </button>
             </div>
             {

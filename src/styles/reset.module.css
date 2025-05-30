@@ -1,0 +1,21 @@
+.heading {
+    margin-bottom: 120px;
+    display: grid;
+    gap: 32px;
+    color: var(--primary-border);
+}
+
+.heading h1 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.heading p {
+    font-size: 1.25rem;
+}
+
+.inputs {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 60px;
+}

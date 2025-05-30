@@ -20,6 +20,12 @@
     color: var(--primary-border);
 }
 
+.myForm > a {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary-border);
+}
+
 .alt {
     color: var(--black);
     text-align: center;

@@ -7,7 +7,6 @@ import { IoIosArrowRoundBack } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import Button from '../components/Button'
 import { FaArrowRight } from 'react-icons/fa'
-import { useFormState } from 'react-dom'
 
 
 
@@ -17,12 +16,12 @@ export default function Questionaire() {
   const [formData, setFormData] = useState({})
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setFormData(prev=>({...prev, [name]: value}))
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
 
   }
 
-  const handleSubmit =(e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
   }
@@ -51,8 +50,6 @@ export default function Questionaire() {
     <>
       <Layout image={Medic}>
         <div className={styles.container}>
-
-
           <div className={styles.navbar}>
             <button onClick={prevQuestion}>
               <IoIosArrowRoundBack />
@@ -62,7 +59,6 @@ export default function Questionaire() {
               <IoClose />
             </button>
           </div>
-
           <div className={styles.parent}>
 
             <div className={styles.content}>
@@ -259,8 +255,6 @@ export default function Questionaire() {
 
 
           </div>
-
-
         </div>
       </Layout>
     </>

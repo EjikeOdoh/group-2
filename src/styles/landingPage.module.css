@@ -110,6 +110,8 @@
 
 .card .icon {
     width: 100px;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .card h3 {
@@ -278,4 +280,9 @@
 .footerCol p {
     font-size: 1rem;
     color: var(--primary-border);
+}
+
+
+@media (max-width: 760px) {
+    
 }

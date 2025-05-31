@@ -14,6 +14,7 @@ import { GrDocumentTransfer } from 'react-icons/gr'
 import { VscGraphLine } from 'react-icons/vsc'
 import { LuLeaf } from 'react-icons/lu'
 import { useState } from 'react'
+import { MdMenu } from 'react-icons/md'
 
 
 
@@ -148,10 +149,25 @@ export default function LandingPage() {
                     <div className={styles.logo}>
                         <img src={Logo} alt="Logo" />
                     </div>
+
+                    
+                    <ul className={styles.menu}>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Features</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+
                     <div className={styles.btns}>
                         <button className={styles.signInBtn}>Sign In</button>
                         <button className={styles.signUpBtn}>Sign Up</button>
                     </div>
+
+
+                    <button className={styles.menuBtn}>
+                        <MdMenu size={24} />
+                    </button>
+
                 </nav>
 
                 <div className={styles.hero}>
@@ -238,7 +254,7 @@ export default function LandingPage() {
                         health profile.</h1>
                     <button>Start Assessment</button>
                 </div>
-                <div>
+                <div className={styles.image}>
                     <img src={Drug} alt="Temi will provide it" />
                 </div>
             </div>
@@ -250,9 +266,9 @@ export default function LandingPage() {
                     </div>
                     <small>Your Fertility Companion</small>
                     <div className={styles.smIcons}>
-                        <FaInstagram />
-                        <CiLinkedin />
-                        <CiTwitter />
+                        <FaInstagram size={24} />
+                        <CiLinkedin size={28} />
+                        <CiTwitter size={28} />
 
                     </div>
                 </div>

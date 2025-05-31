@@ -17,7 +17,7 @@
     background-image: url(../images/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 800px;
+    height: 900px;
     border-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) fill 1;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,25 @@
     align-items: center;
     justify-content: space-between;
     padding: 30px 120px;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+}
+
+.navbar .menuBtn {
+    display: none;
+}
+
+.menu a {
+    padding: 12px 24px;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.875rem;
+    font-family: 'Manrope', sans-serif;
 }
 
 .btns {
@@ -55,6 +74,8 @@
     font-size: 4rem;
     font-weight: 500;
     color: white;
+    letter-spacing: -0.07em;
+    line-height: 72px;
 }
 
 .hero h1 span {
@@ -184,7 +205,11 @@
     background-color: var(--primary);
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 100px;
+}
+
+.texts {
+    max-width: 90ch;
 }
 
 .texts h1 {
@@ -192,11 +217,17 @@
     font-size: 2.5rem;
     color: white;
     margin-bottom: 32px;
+    letter-spacing: -0.07em;
+    line-height: 56px;
 }
 
 .texts button {
     background-color: white;
     color: var(--primary);
+}
+
+.image {
+  display: flex;
 }
 
 .footer {
@@ -206,14 +237,26 @@
     gap: 60px;
 }
 
-.left {
+.footer .left {
     display: grid;
     gap: 8px;
     height: fit-content;
 }
 
-.left .logo {
+.footer .left .logo {
    width: 200px; 
+}
+
+.footer .left small {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+.left .smIcons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .right {
@@ -229,6 +272,7 @@
 .footerCol h3 {
     color: #1E1E1E;
     font-size: 1.35rem;
+    font-weight: 600;
 }
 
 .footerCol p {

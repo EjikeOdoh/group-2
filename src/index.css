@@ -5,7 +5,7 @@
   --alt-secondary-text: #A0A0A0;
   --primary: #4D91CC;
   --gray-text: #9EA2AE;
-
+  --text-white: #FFFFFF;
 
   --primary-border: #333333;
   --border: #B8C2D2;
@@ -33,6 +33,15 @@ button, input {
   height: 50px;
   border-radius: 12px;
   font-family: inherit;
+}
+
+button {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {

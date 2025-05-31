@@ -210,7 +210,7 @@ export default function LandingPage() {
 
                         icon={<TbNotes />}
                         number={1}
-                        desc="Step 1 Sign Up & Complete Questionnaire"
+                        desc="Sign Up & Complete Questionnaire"
 
                     />
 

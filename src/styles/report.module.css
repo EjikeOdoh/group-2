@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .navbar {
@@ -16,7 +17,84 @@
     gap: 8px;
 }
 
+.parent {
+    flex: 1;
+    display: grid;
+    place-content: center;
+}
+
 
 .content {
-    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+ 
+
+}
+
+.heading {
+    display: grid;
+    gap: 24px;
+    text-align: center;
+
+}
+
+.heading h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-border);
+}
+
+.heading > p {
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+.cards {
+    display: grid;
+    gap: 24px;
+}
+
+.cards .top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.cards .top .card {
+    padding: 32px;
+    border: 1px solid var(--alt-secondary-text);
+    border-radius: 12px;
+    display: grid;
+    gap: 16px;
+}
+
+.cards .top .card h3 {
+font-size: 1.125em;
+color: var(--primary-border);
+font-weight: 600;
+}
+
+.cards .top .card p {
+    font-size: 1rem;
+    color: var(--primary-border);
+}
+
+.cards .bottom {
+    padding: 32px;
+    border: 1px solid var(--yellow);
+    border-radius: 12px;
+    display: flex;
+    gap: 16px;
+    background-color: #FFF7E6;
+}
+.cards .bottom h3 {
+    font-size: 1.25em;
+    color: var(--text);
+    font-weight: 600; 
+}
+
+.cards .bottom p {
+    color: var(--text);
 }

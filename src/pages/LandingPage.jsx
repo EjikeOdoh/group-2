@@ -100,7 +100,7 @@ export default function LandingPage() {
         },
         {
             "id": 3,
-            "active": true,
+            "active": false,
             "question": "Can women use this app too?",
             "answer": "While our current focus is on male fertility, we're developing features for couples. Women may find some general wellness insights helpful, but most content is male-specific."
         },
@@ -112,7 +112,7 @@ export default function LandingPage() {
         },
         {
             "id": 5,
-            "active": true,
+            "active": false,
             "question": "Do you offer medical advice?",
             "answer": "We provide educational information and lifestyle recommendations, but always consult a healthcare professional for medical advice or if you have specific fertility concerns."
         }

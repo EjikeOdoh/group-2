@@ -1,10 +1,15 @@
 .container {
-    height: 100%;
-    display: grid;
-    grid-template-columns:500px 1fr;
+    /* min-height: 100svh; */
+    display: flex;
     gap: 20px;
 }
 
-.container > div:first-of-type img {
-    height: 100%;
+.container .left {
+    width: 500px;
+    display: flex;
+}
+
+
+.container .right {
+    flex: 1;
 }

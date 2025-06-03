@@ -4,10 +4,10 @@ import styles from '../styles/layout.module.css'
 export default function Layout(props) {
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.left}>
                 <img src={props.image} />
             </div>
-            <div>{props.children}</div>
+            <div className={styles.right}>{props.children}</div>
         </div>
     )
 }

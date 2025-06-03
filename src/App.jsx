@@ -8,21 +8,23 @@ import Questionaire from './pages/Questionaire'
 import Report from './pages/Report'
 import ResetPassword from './pages/ResetPassword'
 import Signup from './pages/Signup'
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
   return (
     <>
-{/*     
-      <Signup />
-      <Login />
-      <Hero />
-      <Questionaire />
-      <ResetPassword />
-      <ForgotPassword />
-      <Report />
-      <Questionaire /> */}
-      <LandingPage />
+    
+      {/* <Signup /> */}
+      {/* <Login /> */}
+      {/* <Hero /> */}
+      {/* <Questionaire /> */}
+      {/* <ResetPassword /> */}
+      {/* <ForgotPassword /> */}
+      {/* <Report /> */}
+      {/* <Questionaire />  */}
+      {/* <LandingPage /> */}
+      <Dashboard />
     </>
   )
 }

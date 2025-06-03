@@ -129,6 +129,7 @@
     gap: 48px;
 }
 
+
 .steps h2 {
     font-size: 2rem;
     font-weight: 600;
@@ -205,7 +206,7 @@
     background-color: var(--primary);
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 100x;
 }
 
 .texts {
@@ -224,10 +225,12 @@
 .texts button {
     background-color: white;
     color: var(--primary);
+    padding: 12px 16px;
 }
 
 .image {
   display: flex;
+  padding: 55px;
 }
 
 .footer {
@@ -278,4 +281,162 @@
 .footerCol p {
     font-size: 1rem;
     color: var(--primary-border);
+}
+
+
+@media (max-width: 440px) {
+    .container {
+        padding: 240px 24px;
+        margin-bottom: 240px;
+}
+
+  .navbar {
+    padding: 24px;
+}
+
+.navbar ul {
+    display: none;
+}
+
+.navbar .menuBtn {
+    display: block;
+    padding: 16px;
+    background: transparent;
+    display: grid;
+    place-content: right;
+
+}
+
+.container button {
+    width: fit-content;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    padding-inline: 40px;
+    background-color: var(--primary);
+}
+
+.btns {
+    display: none;
+}
+
+.hero {
+    width: 100%;
+    padding: 21px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.05em;
+    line-height: 56px;
+}
+
+.hero p {
+    font-size: 1rem;
+    line-height: 24px;
+    padding: 0;
+}
+
+.cards {
+    padding: 80px 24px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    padding: 16px;
+    gap: 24px;
+
+}
+
+.card .icon {
+    width: 107px;
+    height: 89px;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: 400px;
+}
+
+.steps {
+    padding: 80px 24px;
+    gap: 48px;
+}
+
+.steps .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.step .icon {
+    padding: 10px;
+    gap: 24px;
+}
+
+.faq {
+    padding: 80px 24px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.question button {
+    padding: 0;
+    background: none;
+    color: var(--text);
+    font-size: 0.875rem;
+
+}
+
+.cta {
+    padding: 180px 32px;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.texts h1 {
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+
+.texts button {
+    background-color: white;
+    color: var(--primary);
+}
+
+.footer {
+    padding: 120px 24px;
+    grid-template-columns: 1fr;
+    gap: 44px;
+}
+
+.footer .left.logo {
+    padding: 120px 24px;
+}
+
+.footer .left small {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    
+}
+
+.left .smIcons {
+    padding: 8px;
+}
+
+.footer .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+}
 }

@@ -9,6 +9,8 @@ import Report from './pages/Report'
 import ResetPassword from './pages/ResetPassword'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
+import HabitTracker from './pages/HabitTracker'
+import Reminder from './pages/Reminder'
 
 function App() {
 
@@ -23,8 +25,10 @@ function App() {
       {/* <ForgotPassword /> */}
       {/* <Report /> */}
       {/* <Questionaire />  */}
-      {/* <LandingPage /> */}
-      <Dashboard />
+      <LandingPage />
+      {/* <Dashboard /> */}
+      {/* <HabitTracker /> */}
+      {/* <Reminder /> */}
     </>
   )
 }

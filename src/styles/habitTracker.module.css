@@ -1,0 +1,146 @@
+.container {
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    grid-template-areas:
+        "habits habits stats"
+        "habits habits stats"
+        "chart chart stats"
+    ;
+    gap: 24px;
+}
+
+.container > * {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .habits {
+    grid-area: habits;
+    gap: 24px;
+}
+
+.container .habits .habitCards {
+    flex: 1;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.container .chart {
+    grid-area: chart;
+}
+
+.container .stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.container .stats .streaks {
+    display: grid;
+    gap: 24px;
+}
+
+.container .stats .score {
+    padding-block: 16px;
+}
+
+.container .stats .score .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container .stats .score .bottom p {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--text);
+}
+
+.container .stats .tipsContainer {
+    padding: 32px;
+    border-radius: 12px;
+    display: grid;
+    gap: 16px;
+}
+
+.container .stats .tipsContainer h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+.container .stats .tipsContainer .tips {
+    padding-bottom: 40px;
+    display: grid;
+    gap: 8px;
+}
+
+.container .stats .tipsContainer .tips {
+    font-size: 1rem;
+    color: var(--primary-border);
+}
+
+/* Styling for header component */
+.header {
+    padding: 24px;
+    background-color: #EFF8FF;
+    border: 1px solid #60B5FF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.header .label {
+    font-size: 1rem;
+    color: var(--primary-border);
+}
+
+
+/* Styling for habit component */
+.habit {
+    border-radius: 12px;
+    padding: 32px;
+    background-color: white;
+    display: grid;
+    gap: 24px;
+}
+
+.habit .top {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.habit .top .label p {
+    font-size: 1.25rem;
+    color: var(--primary-border);
+}
+
+.habit .bottom small {
+    font-size: 0.875rem;
+    color: var(--primary-border) ;
+}
+
+/* Styling for streak component */
+.streak {
+    background-color: #EFF8FF;
+    border-radius: 16px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.streak p {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}

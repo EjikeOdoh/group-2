@@ -1,0 +1,10 @@
+.icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    display: grid;
+    place-content: center;
+    font-size: 1.8rem;
+    color: #60B5FF;
+}

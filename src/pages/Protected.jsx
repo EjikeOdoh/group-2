@@ -5,6 +5,8 @@ import Dialog from '../components/Dialog'
 import { useRef } from 'react'
 import Button from '../components/Button'
 import LightBtn from '../components/LightBtn'
+import { IoMdNotificationsOutline } from 'react-icons/io'
+import Avatar from '../thumbnails/avatar.jpg'
 
 export default function Protected() {
 
@@ -24,8 +26,13 @@ export default function Protected() {
       <div className={styles.content}>
         <div className={styles.top}>
           <p className={styles.salute}>Good morning, Temi</p>
-          <div>
-            <button>Hello</button>
+          <div className={styles.btns}>
+            <button className={styles.notify}>
+              <IoMdNotificationsOutline size={32} />
+            </button>
+            <button className={styles.notify}>
+              <img src={Avatar} />
+            </button>
           </div>
         </div>
 

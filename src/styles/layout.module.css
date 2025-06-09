@@ -1,5 +1,6 @@
 .container {
-    /* min-height: 100svh; */
+    height: 100svh;
+    min-width: 100svh;
     display: flex;
     gap: 20px;
 }
@@ -12,4 +13,10 @@
 
 .container .right {
     flex: 1;
+}
+
+@media (max-width: 760px) {
+    .left {
+        display: none !important;
+    }
 }

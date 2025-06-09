@@ -17,6 +17,8 @@
 
 .activities {
     grid-area: activities;
+    display: grid;
+    gap: 24px;
 }
 
 .activities .activityCards {
@@ -32,9 +34,12 @@
 
 .alerts {
     grid-area: alerts;
-    display: grid;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
     padding: 24px;
+    overflow-y: auto;
 }
 
 
@@ -58,6 +63,10 @@
     font-size: 1rem;
     color: var(--primary-border);
     font-weight: 400;
+}
+
+.activity .stats {
+    margin-bottom: 16px;
 }
 
 .activity > button {
@@ -145,6 +154,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    height: fit-content;
 }
 
 .category h2 {
@@ -157,4 +167,32 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+
+/* Styling for tip modals */
+
+.modal {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.modal > .icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #CEE8FF;
+    color: #4888BF;
+    font-size: 5rem;
+}
+
+.modal > p {
+    color: var(--primary-border);
 }

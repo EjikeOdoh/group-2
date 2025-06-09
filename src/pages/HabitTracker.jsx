@@ -4,6 +4,10 @@ import RoundIcon from '../components/RoundIcon'
 import { IoFlameOutline } from 'react-icons/io5'
 import { LuWineOff } from 'react-icons/lu'
 import { MdOutlineSmokingRooms } from 'react-icons/md'
+import Bar from '../components/Bar'
+import { FaPersonWalking } from 'react-icons/fa6'
+import FBar from '../components/FBar'
+import SleepChart from '../components/SleepChart'
 
 export function Header(props) {
     return (
@@ -25,7 +29,7 @@ export function Habit(props) {
                 </div>
             </div>
             <div className={styles.bottom}>
-                {/* Progress bar here */}
+               <Bar value={props.value} variant='determinate' />
                 <small>{props.hint}</small>
             </div>
         </div>
@@ -55,29 +59,34 @@ export default function HabitTracker() {
                         habit="Sleep"
                         unit="hrs"
                         hint="Better rest, better hormones"
+                        value={50}
                     />
                        <Habit
-                        icon={<FaBed />}
-                        habit="Sleep"
-                        unit="hrs"
-                        hint="Better rest, better hormones"
+                        icon={<LuWineOff />}
+                        habit="Alcohol intake"
+                        unit="drinks"
+                        hint="Try to limit this week"
+                        value={50}
                     />
                        <Habit
-                        icon={<FaBed />}
-                        habit="Sleep"
-                        unit="hrs"
-                        hint="Better rest, better hormones"
+                        icon={<FaPersonWalking />}
+                        habit="Walking"
+                        unit="steps"
+                        hint="You're almost there"
+                        value={50}
                     />
                        <Habit
-                        icon={<FaBed />}
-                        habit="Sleep"
-                        unit="hrs"
-                        hint="Better rest, better hormones"
+                        icon={<MdOutlineSmokingRooms />}
+                        habit="Smoking"
+                        unit="days"
+                        hint="Try to limit this week"
+                        value={50}
                     />
                 </div>
             </div>
-            <div className={styles.chart}>Chart
+            <div className={styles.chart}>
                 {/* Chart should come in here */}
+                <SleepChart />
             </div>
             <div className={styles.stats}>
                 <div className={styles.streaks}>
@@ -96,10 +105,7 @@ export default function HabitTracker() {
                 </div>
                 <div className={styles.score}>
                     {/* Bar should come in here */}
-                    <div className={styles.bottom}>
-                         <p>Fertility Score</p>
-                         <p>45%</p>
-                    </div>
+                    <FBar value={45} />
                    
                 </div>
                 <div className={styles.tipsContainer}>

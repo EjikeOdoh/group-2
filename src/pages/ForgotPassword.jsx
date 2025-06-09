@@ -10,7 +10,6 @@ export default function ForgotPassword() {
         <AuthLayout image={Cover}>
 
             <div className={styles.container}>
-
                 <div className={styles.heading}>
                     <h1>Forgot Password</h1>
                     <p>Enter email address associated with this account we’ll send an OTP for email verification.</p>

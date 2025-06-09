@@ -19,3 +19,31 @@
     gap: 16px;
     margin-bottom: 60px;
 }
+
+
+@media (max-width: 760px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 24px;
+    }
+
+    .heading {
+        margin-bottom: 40px;
+    }
+
+    .heading h1 {
+        font-size: 1.25rem;
+    }
+
+    .heading p {
+        font-size: 1rem;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+    }
+}

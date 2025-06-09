@@ -1,0 +1,12 @@
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bottom p {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--text);
+}

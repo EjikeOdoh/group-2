@@ -4,6 +4,7 @@ import Drug from '../images/medication.png'
 import { TbNotes } from 'react-icons/tb'
 import { FaInstagram, FaMinus, FaPlus } from 'react-icons/fa'
 import { CiLinkedin, CiTwitter } from 'react-icons/ci'
+import { Link, useNavigate } from 'react-router'
 
 // images for card components
 import Plant from '../images/plant.png'
@@ -85,6 +86,8 @@ function FooterCol(props) {
 
 export default function LandingPage() {
 
+    const navigate = useNavigate()
+
     const [questions, setQuestions] = useState([
         {
             "id": 1,
@@ -159,8 +162,11 @@ export default function LandingPage() {
                     </ul>
 
                     <div className={styles.btns}>
-                        <button className={styles.signInBtn}>Sign In</button>
-                        <button className={styles.signUpBtn}>Sign Up</button>
+                        <button 
+                        className={styles.signInBtn}
+                        onClick={()=>navigate('/login')}
+                        >Sign In</button>
+                        <button className={styles.signUpBtn} onClick={()=>navigate('/register')} >Sign Up</button>
                     </div>
 
 

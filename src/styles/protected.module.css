@@ -1,0 +1,58 @@
+.container {
+    height: 100svh;
+    scrollbar-width: none;
+}
+
+.content {
+    margin-left: 250px;
+    position: relative;
+}
+
+.content .top {
+    position: fixed;
+    height: 80px;
+    width: calc(
+        min(100vw, 1440px) - 250px
+      );
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 32px;
+    z-index: 50;
+}
+
+
+
+/* Styling for logout modal */
+
+.modal {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal > .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal > .texts > h3 {
+    font-size: 1.25rem;
+    color: var(--primary-border);
+    font-weight: 600;
+}
+
+.modal > .texts > p {
+    font-size: 0.875rem;
+    color: var(--text);
+}
+
+
+.modal > .btns {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

@@ -8,8 +8,26 @@ import LightBtn from '../components/LightBtn'
 import { SiGoogle } from 'react-icons/si'
 import { BiEnvelope } from 'react-icons/bi'
 import { IoLockClosedOutline } from 'react-icons/io5'
+import { Link } from 'react-router'
+import { useContext } from 'react'
+import { AuthReducerContext } from '../context/AuthContext'
 
 export default function Login() {
+
+    const dispatch = useContext(AuthReducerContext)
+
+    const handleLogin = async () => {
+
+        try {
+            const res = await fetch("https://redde.pythonanywhere.com/user/login")
+        } catch (error) {
+            console.log(error.message)
+        }
+        dispatch({
+            type: true
+        })
+    }
+
     return (
         <AuthLayout image={Cover}>
             <div className={styles.container}>
@@ -18,18 +36,18 @@ export default function Login() {
 
                 <form className={styles.myForm}>
                     <Input label="Email Address"
-                        icon={<BiEnvelope />} />
+                        icon={<BiEnvelope style={{minWidth: '16px'}} />} />
                     <Input label="Password"
-                    icon={<IoLockClosedOutline />}
+                        icon={<IoLockClosedOutline  style={{minWidth: '16px'}}  />}
                         btn={<button>
-                            <FiEyeOff />
+                            <FiEyeOff  style={{minWidth: '16px'}}  />
                         </button>
                         }
                     />
 
-                    <a className={styles.forgotPassword}>Forgot password </a>
+                    <Link to="/forgot-password" className={styles.forgotPassword}>Forgot password </Link>
 
-                    <Button label="Log in" />
+                    <Button label="Log in" handleClick={handleLogin} />
 
 
                 </form>
@@ -40,6 +58,8 @@ export default function Login() {
                 <div className={styles.btns}>
                     {/* Custom buttons */}
                     <LightBtn
+
+                        handleClick={handleLogin}
                         icon={<SiGoogle color="var(--dark)" />}
                         label="Sign up with Google" />
                     <LightBtn
@@ -47,7 +67,7 @@ export default function Login() {
                         label="Sign up with Facebook" />
                 </div>
 
-                <p className={styles.ownAccount}>Don't have an account? <span>Create an account</span></p>
+                <p className={styles.ownAccount}>Don't have an account? <Link to="/register">Create an account</Link></p>
 
             </div>
 

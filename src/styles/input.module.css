@@ -23,6 +23,7 @@
     flex: 1;
     outline: none;
     font-size: 0.875rem;
+    min-width: 0;
 }
 
 .input input::placeholder {
@@ -32,4 +33,11 @@
 .input small {
     font-size: 0.875rem;
     color: var(--primary-border);
+}
+
+@media (max-width: 760px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 }

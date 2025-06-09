@@ -6,18 +6,38 @@ import { FiEyeOff, FiFacebook } from 'react-icons/fi'
 import Button from '../components/Button'
 import LightBtn from '../components/LightBtn'
 import { SiGoogle } from 'react-icons/si'
+import { Link } from 'react-router'
 
 export default function Signup() {
+
+
+
+    const handleSignUp = (formData) => {
+        const data = Object.fromEntries(formData)
+
+        fetch('https://redde.pythonanywhere.com/user/register', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+
+    }
+
     return (
         <AuthLayout image={Cover}>
             <div className={styles.container}>
 
                 <h1>Create Account</h1>
 
-                <form className={styles.myForm}>
-                    <Input label="Full Name" />
-                    <Input label="Email Address" />
+                <form action={handleSignUp} className={styles.myForm}>
+                    <Input label="First Name" name="first_name" />
+                    <Input label="Last Name" name="last_name" />
+                    <Input label="Username" name="username" />
+                    <Input label="Email Address" name="email" />
                     <Input label="Password"
+                        name="password"
                         btn={<button>
                             <FiEyeOff />
                         </button>
@@ -45,7 +65,7 @@ export default function Signup() {
                         label="Sign up with Facebook" />
                 </div>
 
-                <p className={styles.ownAccount}>Already have an account? <span>Sign In</span></p>
+                <p className={styles.ownAccount}>Already have an account? <Link to="/login">Sign In</Link></p>
 
             </div>
 

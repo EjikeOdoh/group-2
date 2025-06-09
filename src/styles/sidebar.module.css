@@ -1,0 +1,59 @@
+/* Styling for menu item component */
+
+.menuItem {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-wrap: nowrap;
+}
+
+.active {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.875rem;
+    background-color: #EFF8FF;
+    border: 1px solid #E7F4FF;
+    color: #101928;
+    text-wrap: nowrap;
+}
+
+
+/* Styling for sidebar component */
+
+.container {
+    max-width: 250px;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    position: fixed;
+    background-color: white; 
+}
+
+
+.container .top {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.container .top .logo {
+    max-width: 160px;
+    display: flex;
+    padding: 10px 16px;
+
+}
+
+.container .top > div, .container .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}

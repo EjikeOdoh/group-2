@@ -1,0 +1,189 @@
+.container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 32px;
+}
+
+.mainCard {
+    display: flex;
+    align-items: center;
+  
+}
+
+.cover {
+    display: flex;
+    width: 50%;
+    padding: 30px;
+    max-height: 300px;
+}
+
+.cover img {
+    object-fit: contain;
+}
+
+.mainCard .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.texts h3 {
+    font-size: 1.5rem;
+    color: var(--primary-border);
+    font-weight: 600;
+}
+
+.texts p {
+    font-size: 1.125rem;
+    color: var(--text);
+}
+
+.texts button {
+    color: #60B5FF;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+    font-size: 0.875rem;
+}
+
+
+.left .top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.chips {
+    display: flex;
+    gap: 24px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+}
+/* Generic */
+
+.blueCard {
+    border-radius: 12px;
+    padding: 24px;
+    background-color: var(--light-bg); 
+}
+
+.blueCard h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-border);
+    margin-bottom: 16px;
+}
+
+/* Styling for card component */
+.card {
+    flex: 1;
+    padding: 32px;
+    border-radius: 12px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-border);
+    margin-bottom: 16px;
+}
+
+.card p {
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+/* Styling for row component */
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.line > h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary-border);
+}
+
+.line > p {
+    color: var(--primary-border);
+}
+
+/* Styling for logout modal */
+
+.modal {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+}
+
+.modal .top > .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal .top > .heading > h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-border);
+}
+
+.modal .top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal .top > .heading > .thumbnail {
+    width: 80px;
+    height: 80px;
+    display: flex;
+}
+
+.modal .top > .heading > .thumbnail img {
+    object-fit: contain;
+}
+
+.modal .top > p {
+    font-size: 0.875rem;
+}
+
+.modal .bottom > .facts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+    border-top: 2px solid #B8C2D2;
+}
+
+.readMore {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.readMore > * {
+    width: fit-content;
+    padding-inline: 24px;
+}

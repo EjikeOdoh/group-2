@@ -1,0 +1,35 @@
+.container {
+
+}
+
+.container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+
+/* Styling for tab component */
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+}
+
+.tab h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--primary-border);
+}
+
+.tab p {
+    color: var(--primary-border);
+}

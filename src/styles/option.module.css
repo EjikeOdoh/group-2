@@ -12,3 +12,9 @@
     font-size: 1.125rem;
     color: #1E1E1E;
 }
+
+@media (max-width: 760px) {
+    .option label {
+        font-size: 0.875rem;
+    }  
+}

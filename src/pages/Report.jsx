@@ -6,8 +6,13 @@ import { IoIosArrowRoundBack } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import Button from '../components/Button'
 import { FaRegStar } from 'react-icons/fa'
+import FBar from '../components/FBar'
+import { useNavigate } from 'react-router'
 
 export default function Report() {
+
+    const navigate = useNavigate()
+
     return (
         <Layout image={Doc}>
             <div className={styles.container}>
@@ -25,6 +30,9 @@ export default function Report() {
                         <div className={styles.heading}>
                             <h1>High Risk</h1>
                             {/* Add progress bar here */}
+
+                                <FBar value={60} />
+
                             <p>Your current fertility risk is hight. Some changes are suggested</p>
                         </div>
                         <div className={styles.cards}>
@@ -47,7 +55,7 @@ export default function Report() {
                                 </div>
                             </div>
                         </div>
-                        <Button label="Go to dashboard" />
+                        <Button label="Go to dashboard" handleClick={()=>navigate('/')} />
                     </div>
                 </div>
 

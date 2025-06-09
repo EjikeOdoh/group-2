@@ -1,16 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import Layout from '../components/Layout'
 import Medic from '../images/medic.png'
 import styles from '../styles/questionaire.module.css'
 import Option from '../components/Option'
-import { IoIosArrowRoundBack } from 'react-icons/io'
+import { IoIosArrowRoundBack, IoMdCheckmark } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import Button from '../components/Button'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaCheck } from 'react-icons/fa'
+import { closeModal, openModal } from '../util/modalFunctions'
+import Dialog from '../components/Dialog'
+import { useNavigate } from 'react-router'
+import { AuthReducerContext } from '../context/AuthContext'
 
 
 
 export default function Questionaire() {
+
+  const navigate = useNavigate()
+  const dispatch = useContext(AuthReducerContext)
+
+  const questionaireRef = useRef(null)
 
   const [index, setIndex] = useState(1)
   const [formData, setFormData] = useState({})
@@ -24,9 +33,11 @@ export default function Questionaire() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
+    openModal(questionaireRef) 
   }
 
   const nextQuestion = () => {
+    index === 10 ? openModal(questionaireRef) :
     setIndex(prev => prev + 1)
   }
 
@@ -114,7 +125,7 @@ export default function Questionaire() {
                     <>
                       <div>
                         <h2>Have you experienced any of the following childhood illnesses?
-                          (Select all that apply)</h2>
+                         </h2>
                         <small>(Select all that apply)</small>
                       </div>
                       <div className={styles.options}>
@@ -134,8 +145,8 @@ export default function Questionaire() {
                     <>
                       <div>
                         <h2>Have you experienced any major physical trauma (e.g., accidents, sports injuries)?
-                          (Select all that apply)</h2>
-                        <small>(Select all that apply)</small>
+                          </h2>
+                       
                       </div>
                       <div className={styles.options}>
                         <Option label='physicalTrauma' value="Yes" />
@@ -154,7 +165,6 @@ export default function Questionaire() {
                     <>
                       <div>
                         <h2>How often do you consume Alcohol</h2>
-                        <small>(Select all that apply)</small>
                       </div>
                       <div className={styles.options}>
                         <Option label='consumeAlcohol' value="Never" />
@@ -257,6 +267,26 @@ export default function Questionaire() {
           </div>
         </div>
       </Layout>
+            {/* Complete questionnaire dialog */}
+      
+                  <Dialog ref={questionaireRef}>
+                      <div className={styles.modal}>
+                          <IoMdCheckmark color='#56A3E6' size={100} />
+                          <div className={styles.salute}>
+                              <h2>Questionnaire completed</h2>
+                              <p>Thank you for taking the time to provide this information.</p>
+                          </div>
+                          <Button label="View Fertility Report"
+                              handleClick={() => {
+                                dispatch({
+                                  type: true
+                                })
+                                closeModal(questionaireRef)
+                                navigate("/report")
+                              }}
+                          />
+                      </div>
+                  </Dialog>
     </>
   )
 }

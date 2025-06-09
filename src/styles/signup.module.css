@@ -42,6 +42,30 @@
     color: var(--primary-border);
 }
 
-.ownAccount span {
+.ownAccount a {
     font-weight: 600;
+    color: inherit;
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: 100vw;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container h1 {
+        font-size: 1.25rem;
+    }
+
+    .ownAccount {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .myForm {
+        display: flex;
+        flex-direction: column;
+    }
 }

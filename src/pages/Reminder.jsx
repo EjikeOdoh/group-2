@@ -3,11 +3,17 @@ import styles from '../styles/reminder.module.css'
 import { Header } from './HabitTracker'
 import RoundIcon from '../components/RoundIcon'
 import { RiMapPin2Line } from 'react-icons/ri'
-import { PiPillFill, } from "react-icons/pi";
+import { PiCarrotBold, PiPillFill, } from "react-icons/pi";
 import { GiRoastChicken } from 'react-icons/gi'
 import { FaBottleWater } from 'react-icons/fa6'
 import { CgGym } from 'react-icons/cg'
 import { ImSleepy } from 'react-icons/im'
+import Bar from '../components/Bar'
+import Dialog from '../components/Dialog'
+import { useRef } from 'react'
+import { closeModal, openModal } from '../util/modalFunctions'
+import LightBtn from '../components/LightBtn'
+import { IoFastFoodOutline, IoFootstepsOutline, IoMoonOutline } from 'react-icons/io5'
 
 const data = [
     {
@@ -40,10 +46,6 @@ const data = [
 const groupedByDate = Object.groupBy(data, (x) => x.date);
 
 
-
-
-
-
 export function Activity(props) {
     return (
         <div className={styles.activity}>
@@ -51,10 +53,11 @@ export function Activity(props) {
             <div>
                 {props.hasBar ? <>
                     <p className={styles.stats}>{props.stats}</p>
+                    <Bar value={props.value} variant='determinate' />
                     {/* Bar */}
                 </> : <p className={styles.desc}>{props.desc}</p>}
             </div>
-            <button>{props.cta}</button>
+            <button onClick={props.handleClick}>{props.cta}</button>
         </div>
     )
 }
@@ -117,6 +120,10 @@ export function Category(props) {
 
 export default function Reminder() {
 
+    const sleepRef = useRef(null)
+    const stepRef = useRef(null)
+    const foodRef = useRef(null)
+
     const alertCategories = Object.entries(groupedByDate).map(([date, activities]) => (
 
         <Category
@@ -138,8 +145,10 @@ export default function Reminder() {
                     <Activity
                         label="Sleep"
                         hasBar={true}
+                        value={70}
                         stats="5h 20m"
                         cta="Track progress"
+                        handleClick={() => openModal(sleepRef)}
                     />
 
                     <Activity
@@ -147,12 +156,17 @@ export default function Reminder() {
                         hasBar={false}
                         desc="Fruits & Veggies"
                         cta="Log Now"
+                        handleClick={() => openModal(foodRef)}
+
                     />
                     <Activity
                         label="Steps"
                         hasBar={true}
+                        value={20}
                         stats="1,500/10,000 steps"
                         cta="Steps in"
+                        handleClick={() => openModal(stepRef)}
+
                     />
 
                     <Activity
@@ -181,6 +195,48 @@ export default function Reminder() {
             <div className={styles.alerts}>
                 {alertCategories}
             </div>
+
+            {/* Dialogs */}
+
+            {/* Sleep modal */}
+            <Dialog ref={sleepRef}>
+                <div className={styles.modal}>
+                    <div className={styles.icon}>
+                        <IoMoonOutline />
+                    </div>
+                    <p>Sleep 7-9 hours to improve fertility.</p>
+                    <LightBtn label="Got it!"
+                        handleClick={() => closeModal(sleepRef)}
+                    />
+                </div>
+            </Dialog>
+
+            {/* step modal */}
+            <Dialog ref={stepRef}>
+                <div className={styles.modal}>
+                    <div className={styles.icon}>
+                        <IoFootstepsOutline />
+                    </div>
+                    <p>You crushed it today, Champ!</p>
+                    <LightBtn label="Got it!"
+                        handleClick={() => closeModal(stepRef)}
+                    />
+                </div>
+            </Dialog>
+
+
+            {/* food modal */}
+            <Dialog ref={foodRef}>
+                <div className={styles.modal}>
+                    <div className={styles.icon}>
+                        <PiCarrotBold size={60} />
+                    </div>
+                    <p>Every healthy meal fuels your fertility</p>
+                    <LightBtn label="Got it!"
+                        handleClick={() => closeModal(foodRef)}
+                    />
+                </div>
+            </Dialog>
         </div>
     )
 }

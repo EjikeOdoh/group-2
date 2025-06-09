@@ -51,5 +51,6 @@ body {
   max-width: 1440px;
   margin: auto;
   min-height: 100svh;
+  max-height: 1200px;
   color: var(--text);
 }

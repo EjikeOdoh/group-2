@@ -8,6 +8,10 @@ import { IoTimeOutline } from 'react-icons/io5'
 
 import T1 from '../thumbnails/tool.png'
 import T2 from '../thumbnails/organ.png'
+import { Gauge, gaugeClasses } from '@mui/x-charts'
+import Pie from '../components/Pie'
+import Toggle from '../components/Toggle'
+import { useNavigate } from 'react-router'
 
 export function Habit(props) {
     return (
@@ -42,7 +46,7 @@ export function Reminder(props) {
                 </div>
                 <p>{props.text}</p>
             </div>
-            <button className={styles.rightBtn}>{props.active ? <MdToggleOn size={50} color="var(--green)" /> : <MdToggleOff size={50} color='#E5E7EA' /> }</button>
+            <Toggle />
         </div>
     )
 }
@@ -61,15 +65,20 @@ function BlogCard (props) {
 }
 
 export default function Dashboard() {
+
+    const navigate = useNavigate()
+
     return (
         <div className={styles.container}>
             <div className={styles.riskScore}>
                 <h2 className={styles.subHeading}>Your Fertility Risk Score</h2>
                 <div className={styles.chartContainer}>
-                    Pie Chart
+                 
+                    <Pie value={45} />
+
                     <div>
                         <p>Your current risk score is high</p>
-                        <Button label="View Full Report" />
+                        <Button label="View Full Report" handleClick={()=>navigate("/fertility-report")} />
                     </div>
                 </div>
             </div>
@@ -115,7 +124,7 @@ export default function Dashboard() {
                 <div className={styles.reminders}>
                     <Reminder icon={<PiPillFill />} text="Take multivitamins" />
                     <Reminder icon={<FaWalking />} text="Walk for 30 minutes" active={true} />
-                    <Reminder icon={<IoTimeOutline />} text="Track sleep" />
+                    <Reminder icon={<IoTimeOutline />} text="Track sleep" />                
                 </div>
             </div>
             <div className={styles.educationalTips}>

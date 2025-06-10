@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertility Dashboard</title>
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div>
+        <div class="sidebar-logo"><img src="src/images/Group 19 (1).png"><img src="src/images/Group 20.png"></div>
+        <div class="sidebar-top">
+          <div class="sidebar-item active"><img src="image/" > Dashboard</div>
+          <div class="sidebar-item"><span class="icon icon-score"></span> Fertility Score</div>
+          <div class="sidebar-item"><span class="icon icon-habit"></span> Habit Tracker</div>
+          <div class="sidebar-item"><span class="icon icon-plan"></span> Improvement Plan</div>
+          <div class="sidebar-item"><span class="icon icon-schedule"></span> Schedule/Reminder</div>
+          <div class="sidebar-item"><span class="icon icon-educational"></span>Educational/learn</div>
+        </div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-item settings"><span class="icon icon-settings"></span> Settings</div>
+        <div class="sidebar-item logout"><span class="icon icon-logout"></span> Log Out</div>
+      </div>
+    </div>
+    <!-- Main dashboard -->
+    <div class="main">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-title">Welcome, Benedict</div>
+        <div class="header-user">
+          <img src="src/images/bell.png" alt="bell">
+          <div class="header-avatar">
+            <img src="src/images/Avatar.png" alt="Avatar">
+            <span class="avatar-dot"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Top cards -->
+      <div class="dashboard-top">
+        <!-- Fertility Risk Score Card -->
+        <div class="risk-card">
+          <h3> Your Fertility Risk Score</h3>
+          <div class="risk-row">
+              <img src="src/images/Chart.png" class="risk-circle" />
+          
+          <div class="risk-container">
+          <div class="risk-description">Your current risk score is 
+            <br> high </div>
+          <div class="score-fill" style="width: 45%;"></div>
+          
+          <button class="risk-btn">View Full Report</button>
+          </div>
+          </div>
+        </div>
+        
+        
+  
+        <!-- Habit Tracker Card -->
+        <div class="habit-card">
+          <div class="habit-title">Habit Tracker</div>
+          <div class="habit-grid">
+            <div class="habit-item">
+              <img src="src/images/mdi_bed-outline (1).png"> <span>Sleep</span>
+              <strong>7 hrs avg</strong>
+            </div>
+            <div class="habit-item">
+              <img src="src/images/walk.png">
+              <span>Walking</span>
+              <strong>5/7 days</strong>
+            </div>
+            <div class="habit-item">
+              <img src="src/images/drink.png">
+              <span>Alcohol</span>
+              <strong>1/7 days</strong>
+            </div>
+            <div class="habit-item">
+              <img src="src/images/healthicons_smoking-outline-24px.png">
+              <span>Smoking</span>
+              <strong>2/7 days</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom cards -->a
+      <div class="dashboard-bottom">
+        <!-- Improvement Plan Card -->
+        <div class="improvement-card">
+          <div class="improvement-title">Improvement Plan</div>
+          <div class="improvement-list">
+            <div class="improvement-item"><span class="check"><img src="src/images/Checkbox.png"></span> Week 1: Drink more water</div>
+            <div class="improvement-item"><span class="check"><img src="src/images/Checkbox.png"></span>Week 2: Reduce alcohol intake</div>
+            <div class="improvement-item"><span class="check"><img src="src/images/Checkbox.png"></span> Week 3: Eat more fruits & veggies</div>
+            <div class="improvement-item"><span class="check"><img src="src/images/Checkbox (1).png"></span> Week 4: Schedule check-up</div>
+          </div>
+        </div>
+        <!-- Smart Reminders Card -->
+        <div class="smart-card">
+          <div class="smart-title">Smart Reminders <span style="float:right; color:#b4bfc9; font-size:14px;">Edit</span></div>
+          <div class="smart-list">
+            <div class="smart-item">
+              Take multivitamins
+              <label class="smart-toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="smart-item">
+              Walk for 30 minutes.
+              <label class="smart-toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="smart-item">
+              Track sleep
+              <label class="smart-toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="dashboard-footer">
+        <div class="footer-section">
+          <div class="footer-title">Educational Tips</div>
+          <div class="footer-desc">Male Fertility: When to see a doctor</div>
+          <button class="footer-btn">Read More</button>
+        </div>
+        <div class="footer-section">
+          <div class="footer-title">What Every Man Should Know About Fertility</div>
+          <button class="footer-btn">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -39,6 +39,7 @@
     flex-direction: column;
     gap: 24px;
     padding: 24px;
+    background-color: white;
     overflow-y: auto;
 }
 
@@ -51,6 +52,7 @@
     border-radius: 12px;
     display: grid;
     gap: 32px;
+    background-color: white;
 }
 
 .activity .label {
@@ -155,6 +157,7 @@
     flex-direction: column;
     gap: 16px;
     height: fit-content;
+    background-color: white;
 }
 
 .category h2 {

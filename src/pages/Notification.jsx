@@ -3,43 +3,35 @@ import RoundIcon from '../components/RoundIcon'
 import { RxPerson } from 'react-icons/rx'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import { GiWallet } from 'react-icons/gi'
+import { Tab } from './Settings';
 
 
-export function Tab(props) {
-    return (
-        <button className={styles.tab}>
-            <RoundIcon icon={props.icon} />
-            <div>
-                <h3>{props.label}</h3>
-                <p>{props.det}</p>
-                <small>{props.time}</small>
-            </div>
-        </button>
-    )
-}
 
 export default function Settings() {
     return (
         <div className={styles.container}>
-            <h2>Settings</h2>
+            <h2>NOTIFICATIONS</h2>
 
             <div className={styles.settings}>
                 <Tab
                     icon={<RxPerson />}
-                    label="Profile"
-                    det="Edit your profile information"
+                    label="Time for daily check-in!"
+                    det="Don't forget to log your habits for today."
+                    time="2h ago"
                 />
 
                 <Tab
                     icon={<IoMdNotificationsOutline />}
-                    label="Notifications"
-                    det="Manage notifications preference"
+                    label="Your fertility report is ready"
+                    det="see your report and personalised plan."
+                    time="1d ago"
                 />
 
                 <Tab
                     icon={<GiWallet />}
-                    label="Account"
-                    det="Subscriptions and billing"
+                    label="Reminder:Upcoming health check-in"
+                    det="You will have a check-up in one week"
+                    time="June 06"
                 />
             </div>
 

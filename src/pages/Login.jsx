@@ -11,20 +11,29 @@ import { IoLockClosedOutline } from 'react-icons/io5'
 import { Link } from 'react-router'
 import { useContext } from 'react'
 import { AuthReducerContext } from '../context/AuthContext'
+import { manageServerCall } from '../api/api'
 
 export default function Login() {
 
     const dispatch = useContext(AuthReducerContext)
 
-    const handleLogin = async () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData);
 
-        // try {
-        //     const res = await fetch("https://redde.pythonanywhere.com/user/login")
-        // } catch (error) {
-        //     console.log(error.message)
-        // }
-        dispatch({
-            type: true
+        const data = Object.fromEntries(formData)
+
+        console.log(data);
+        
+        manageServerCall("post","user/login/",{},data)
+        .then(()=>{
+            dispatch({
+                type: true
+            })
+        })
+        .catch(err=>{
+            alert("Invalid Credentials")
         })
     }
 
@@ -34,10 +43,12 @@ export default function Login() {
 
                 <h1>Welcome back! Select method to log in:</h1>
 
-                <form className={styles.myForm}>
-                    <Input label="Email Address"
+                <form className={styles.myForm} onSubmit={(e)=>{handleLogin(e)}}>
+                    <Input label="Email Address" name="username"
                         icon={<BiEnvelope style={{ minWidth: '16px' }} />} />
+                        
                     <Input label="Password"
+                        name="password"
                         icon={<IoLockClosedOutline style={{ minWidth: '16px' }} />}
                         btn={<button>
                             <FiEyeOff style={{ minWidth: '16px' }} />
@@ -47,7 +58,7 @@ export default function Login() {
 
                     <Link to="/forgot-password" className={styles.forgotPassword}>Forgot password </Link>
 
-                    <Button label="Log in" handleClick={handleLogin} />
+                    <Button label="Log in"/>
 
 
                 </form>

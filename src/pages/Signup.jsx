@@ -6,22 +6,30 @@ import { FiEyeOff, FiFacebook } from 'react-icons/fi'
 import Button from '../components/Button'
 import LightBtn from '../components/LightBtn'
 import { SiGoogle } from 'react-icons/si'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { manageServerCall } from '../api/api'
 
 export default function Signup() {
 
+    const navigate = useNavigate()
 
-
-    const handleSignUp = (formData) => {
+    const handleSignUp = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
         const data = Object.fromEntries(formData)
 
-        fetch('https://redde.pythonanywhere.com/user/register', {
-            method: 'POST',
-            body: JSON.stringify(data)
+        console.log(data);
+        manageServerCall('post','user/register/',{},data)
+        .then(data => {
+            console.log(data)
+            // redirect here to questions or dashboard
+            navigate('/questions');
         })
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err)
+            const errors = Object.values(err)
+            alert(errors[0])
+        })
 
     }
 
@@ -31,7 +39,7 @@ export default function Signup() {
 
                 <h1>Create Account</h1>
 
-                <form action={handleSignUp} className={styles.myForm}>
+                <form onSubmit={e=>{handleSignUp(e)}} className={styles.myForm}>
                     <Input label="First Name" name="first_name" />
                     <Input label="Last Name" name="last_name" />
                     <Input label="Username" name="username" />

@@ -8,6 +8,9 @@ import LightBtn from '../components/LightBtn'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import Avatar from '../thumbnails/avatar.jpg'
 
+import { getUserInfo } from '../api/utils'
+import { useState, useEffect } from 'react'
+
 export default function Protected() {
 
   const navigate = useNavigate()
@@ -22,12 +25,23 @@ export default function Protected() {
     logOutRef.current.close()
   }
 
+  const [info, setUserInfo] = useState(0)
+      
+  useEffect(()=>{
+      getUserInfo()
+      .then(res=>{
+          setUserInfo(res)
+          console.log(res);
+      })
+  },[])
+  
+
   return (
     <div className={styles.container}>
       <SideBar handleLogout={openModal} />
       <div className={styles.content}>
         <div className={styles.top}>
-          <p className={styles.salute}>Good morning, Temi</p>
+          <p className={styles.salute}>Good morning, {info.first_name}</p>
           <div className={styles.btns}>
             <button onClick={() => navigate("/notifications")} className={styles.notify}>
               <IoMdNotificationsOutline size={32} />

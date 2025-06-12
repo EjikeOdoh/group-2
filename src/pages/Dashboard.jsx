@@ -12,6 +12,8 @@ import { Gauge, gaugeClasses } from '@mui/x-charts'
 import Pie from '../components/Pie'
 import Toggle from '../components/Toggle'
 import { useNavigate } from 'react-router'
+import { useEffect,useState } from 'react'
+import { getUserInfo } from '../api/utils'
 
 export function Habit(props) {
     return (
@@ -67,6 +69,15 @@ function BlogCard (props) {
 export default function Dashboard() {
 
     const navigate = useNavigate()
+    const [info, setUserInfo] = useState(0)
+
+    useEffect(()=>{
+        getUserInfo()
+        .then(res=>{
+            setUserInfo(res)
+            console.log(res);
+        })
+    },[])
 
     return (
         <div className={styles.container}>
@@ -74,7 +85,7 @@ export default function Dashboard() {
                 <h2 className={styles.subHeading}>Your Fertility Risk Score</h2>
                 <div className={styles.chartContainer}>
                  
-                    <Pie value={45} />
+                    <Pie value={info.assessment} />
 
                     <div>
                         <p>Your current risk score is high</p>

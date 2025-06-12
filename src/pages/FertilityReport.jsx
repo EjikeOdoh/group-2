@@ -4,19 +4,31 @@ import Button from '../components/Button'
 import { FaRegStar } from 'react-icons/fa'
 import FBar from '../components/FBar'
 import { useNavigate } from 'react-router'
+import { getUserInfo } from '../api/utils'
+import { useState, useEffect } from 'react'
 
 export default function FertilityReport() {
 
     const navigate = useNavigate()
+
+    const [info, setUserInfo] = useState(0)
+    
+        useEffect(()=>{
+            getUserInfo()
+            .then(res=>{
+                setUserInfo(res)
+                console.log(res);
+            })
+        },[])
 
     return (
         <div className={styles.container}>
             <div className={styles.parent}>
                 <div className={styles.content}>
                     <div className={styles.heading}>
-                        <h1>High Risk</h1>
-                        <FBar value={45} />
-                        <p>Your current fertility risk is hight. Some changes are suggested</p>
+                        <h1>{info.assessment >= 50? "High" : "Low"} Risk</h1>
+                        <FBar value={info.assessment} />
+                        <p>Your current fertility risk is {info.assessment >= 50? "High" : "Low"}. Some changes are suggested</p>
                     </div>
                     <div className={styles.cards}>
                         <div className={styles.top}>
@@ -38,7 +50,7 @@ export default function FertilityReport() {
                             </div>
                         </div>
                     </div>
-                    <Button label="Take another Assessement" handleClick={() => navigate("/")} />
+                    <Button label="Take another Assessement" handleClick={() => navigate("/questions")} />
                 </div>
             </div>
 

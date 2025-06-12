@@ -9,6 +9,9 @@ import { FaPersonWalking } from 'react-icons/fa6'
 import FBar from '../components/FBar'
 import SleepChart from '../components/SleepChart'
 
+import { getUserInfo } from '../api/utils'
+import { useState, useEffect } from 'react'
+
 export function Header(props) {
     return (
         <div className={styles.header}>
@@ -46,6 +49,17 @@ export function Streak(props) {
 }
 
 export default function HabitTracker() {
+
+    const [info, setUserInfo] = useState(0)
+          
+    useEffect(()=>{
+        getUserInfo()
+        .then(res=>{
+            setUserInfo(res)
+            console.log(res);
+        })
+    },[])
+
     return (
         <div className={styles.container}>
             <div className={styles.habits}>
@@ -105,7 +119,7 @@ export default function HabitTracker() {
                 </div>
                 <div className={styles.score}>
                     {/* Bar should come in here */}
-                    <FBar value={45} />
+                    <FBar value={info.assessment} />
                    
                 </div>
                 <div className={styles.tipsContainer}>

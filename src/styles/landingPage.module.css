@@ -28,6 +28,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 30px 120px;
+    height: 80px;
+    z-index: 5;
 }
 
 

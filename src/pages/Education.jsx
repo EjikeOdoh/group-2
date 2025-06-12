@@ -21,11 +21,11 @@ function Row(props) {
     return (
         <div className={styles.row}>
             <div className={styles.line}>
-                <FaQuestion style={{minWidth: '16px'}} />
+                <FaQuestion style={{ minWidth: '16px' }} />
                 <h3>{props.myth}</h3>
             </div>
             <div className={styles.line}>
-                <FaCheck style={{minWidth: '16px'}} />
+                <FaCheck style={{ minWidth: '16px' }} />
                 <p>{props.fact}</p>
             </div>
         </div>
@@ -50,7 +50,10 @@ export default function Education() {
                                 fontWeight: 600,
                                 fontFamily: 'inherit',
                                 color: "var(--primary-border)",
-                                paddingInline: "20px"
+                                paddingInline: "20px",
+                                borderRadius: "8px",
+                                height: "44px"
+
                             }} />
 
                         <Chip
@@ -61,7 +64,9 @@ export default function Education() {
                                 fontWeight: 600,
                                 fontFamily: 'inherit',
                                 color: "var(--primary-border)",
-                                paddingInline: "20px"
+                                paddingInline: "20px",
+                                borderRadius: "8px",
+                                height: "44px"
                             }} />
 
                         <Chip
@@ -72,7 +77,9 @@ export default function Education() {
                                 fontWeight: 600,
                                 fontFamily: 'inherit',
                                 color: "var(--primary-border)",
-                                paddingInline: "20px"
+                                paddingInline: "20px",
+                                borderRadius: "8px",
+                                height: "44px"
                             }} />
                     </div>
                 </div>
@@ -144,7 +151,7 @@ export default function Education() {
 
                         </div>
                         <div className={styles.readMore}>
-                            <Button label="Read More" handleClick={()=>closeModal(blogRef)} />
+                            <Button label="Read More" handleClick={() => closeModal(blogRef)} />
                         </div>
                     </div>
 

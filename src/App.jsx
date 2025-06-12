@@ -19,6 +19,7 @@ import { useContext } from 'react'
 import Settings from './pages/Settings'
 import Education from './pages/Education'
 import FertilityReport from './pages/FertilityReport'
+import Notification from './pages/Notification'
 
 
 function Navigation() {
@@ -69,11 +70,20 @@ function Navigation() {
                   />
 
                   <Route
+                    path="notifications"
+                    element={<Notification />}
+                  />
+
+                  <Route
                     path="*"
                     element={<Dashboard />}
                   />
-                </Route>
 
+                </Route>
+                <Route
+                  path='/report'
+                  element={<Report />}
+                />
               </>
             ) :
             (

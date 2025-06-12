@@ -18,11 +18,11 @@ export default function Login() {
 
     const handleLogin = async () => {
 
-        try {
-            const res = await fetch("https://redde.pythonanywhere.com/user/login")
-        } catch (error) {
-            console.log(error.message)
-        }
+        // try {
+        //     const res = await fetch("https://redde.pythonanywhere.com/user/login")
+        // } catch (error) {
+        //     console.log(error.message)
+        // }
         dispatch({
             type: true
         })
@@ -36,11 +36,11 @@ export default function Login() {
 
                 <form className={styles.myForm}>
                     <Input label="Email Address"
-                        icon={<BiEnvelope style={{minWidth: '16px'}} />} />
+                        icon={<BiEnvelope style={{ minWidth: '16px' }} />} />
                     <Input label="Password"
-                        icon={<IoLockClosedOutline  style={{minWidth: '16px'}}  />}
+                        icon={<IoLockClosedOutline style={{ minWidth: '16px' }} />}
                         btn={<button>
-                            <FiEyeOff  style={{minWidth: '16px'}}  />
+                            <FiEyeOff style={{ minWidth: '16px' }} />
                         </button>
                         }
                     />
@@ -61,10 +61,10 @@ export default function Login() {
 
                         handleClick={handleLogin}
                         icon={<SiGoogle color="var(--dark)" />}
-                        label="Sign up with Google" />
+                        label="Sign in with Google" />
                     <LightBtn
                         icon={<FiFacebook color="var(--dark)" size={26} />}
-                        label="Sign up with Facebook" />
+                        label="Sign in with Facebook" />
                 </div>
 
                 <p className={styles.ownAccount}>Don't have an account? <Link to="/register">Create an account</Link></p>

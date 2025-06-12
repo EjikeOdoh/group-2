@@ -22,24 +22,27 @@ const data = [
         detail: "Omega 3 fatty acids - 500mg",
         icon: <PiPillFill />,
         stat: "Vitamin C - 1000mg",
-        date: "today"
+        date: "Today"
     },
 
     {
-        time: "5:30 PM",
-        action: "Workout",
-        detail: "Strength training - Upper body",
+        time: "6:30 AM",
+        action: "Exercise/Walking",
+        detail: "today's goal is to complete 10,000 steps.",
+        // detail: "Strength training - Upper body",
         icon: <CgGym />,
-        stat: "45 minutes",
-        date: "tomorrow"
+        // stat: "45 minutes",
+        date: "Tomorrow"
     },
+
     {
-        time: "10:00 PM",
-        action: "Sleep",
-        detail: "Wind down routine",
+        time: "10:30 AM",
+        action: "Doctor's Appointment",
+        detail: "Monthly check-up with Dr. Stanford",
+        // detail: "Wind down routine",
         icon: <ImSleepy />,
         stat: "8 hours target",
-        date: "next tomorrow"
+        date: "On Friday"
     }
 ];
 
@@ -101,7 +104,7 @@ export function Category(props) {
     return (
         <div className={styles.category}>
             <h2>{props.day}</h2>
-            <div className={styles.alerts}>
+            <div className={styles.alerts2}>
                 {props.alerts.map(x => (
                     <Alert
                         key={x.action}

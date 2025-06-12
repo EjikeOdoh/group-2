@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router'
+import { Outlet, useNavigate } from 'react-router'
 import SideBar from '../components/SideBar'
 import styles from '../styles/protected.module.css'
 import Dialog from '../components/Dialog'
@@ -10,13 +10,15 @@ import Avatar from '../thumbnails/avatar.jpg'
 
 export default function Protected() {
 
+  const navigate = useNavigate()
+
   const logOutRef = useRef(null)
 
   const openModal = () => {
     logOutRef.current.showModal()
   }
 
-  const cancelLogout =() => {
+  const cancelLogout = () => {
     logOutRef.current.close()
   }
 
@@ -27,7 +29,7 @@ export default function Protected() {
         <div className={styles.top}>
           <p className={styles.salute}>Good morning, Temi</p>
           <div className={styles.btns}>
-            <button className={styles.notify}>
+            <button onClick={() => navigate("/notifications")} className={styles.notify}>
               <IoMdNotificationsOutline size={32} />
             </button>
             <button className={styles.notify}>
@@ -36,24 +38,24 @@ export default function Protected() {
           </div>
         </div>
 
-        <div style={{paddingTop: "100px", paddingInline: "24px"}}>
+        <div style={{ paddingTop: "100px", paddingInline: "24px" }}>
           <Outlet />
         </div>
       </div>
 
       {/* Log out modal */}
       <Dialog ref={logOutRef}>
-          <div className={styles.modal}>
-            <div className={styles.texts}>
+        <div className={styles.modal}>
+          <div className={styles.texts}>
             <h3>Log Out</h3>
             <p>Are you sure you want to log out?</p>
-              </div>
-
-              <div className={styles.btns}>
-                <Button label="Log out" />
-                <LightBtn label="Cancel" handleClick={cancelLogout} />
-              </div>
           </div>
+
+          <div className={styles.btns}>
+            <Button label="Log out" />
+            <LightBtn label="Cancel" handleClick={cancelLogout} />
+          </div>
+        </div>
       </Dialog>
     </div>
   )

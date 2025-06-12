@@ -14,8 +14,9 @@ import Shelf from '../images/bookshelf.png'
 import { GrDocumentTransfer } from 'react-icons/gr'
 import { VscGraphLine } from 'react-icons/vsc'
 import { LuLeaf } from 'react-icons/lu'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MdMenu } from 'react-icons/md'
+import MobileNav from '../components/MobileNav'
 
 
 
@@ -58,9 +59,9 @@ function Item(props) {
             <div className={styles.question}>
                 <p style={props.active === true ? { fontWeight: 600 } : undefined}>{props.question}</p>
                 <button onClick={() => props.handleClick(props.id)}>
-                   {
-                    props.active === true ? <FaMinus /> :  <FaPlus />
-                   }
+                    {
+                        props.active === true ? <FaMinus /> : <FaPlus />
+                    }
                 </button>
             </div>
             {
@@ -87,6 +88,16 @@ function FooterCol(props) {
 export default function LandingPage() {
 
     const navigate = useNavigate()
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const openMenu = () => {
+        setIsOpen(true);
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    }
 
     const [questions, setQuestions] = useState([
         {
@@ -145,6 +156,18 @@ export default function LandingPage() {
         )
     })
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
     return (
         <div className={styles.container}>
             <div className={styles.bg}>
@@ -153,26 +176,28 @@ export default function LandingPage() {
                         <img src={Logo} alt="Logo" />
                     </div>
 
-                    
+
                     <ul className={styles.menu}>
                         <li><a href="">Home</a></li>
-                        <li><a href="">Features</a></li>
+                        <li><a href="#features">Features</a></li>
                         <li><a href="">About us</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
 
                     <div className={styles.btns}>
-                        <button 
-                        className={styles.signInBtn}
-                        onClick={()=>navigate('/login')}
+                        <button
+                            className={styles.signInBtn}
+                            onClick={() => navigate('/login')}
                         >Sign In</button>
-                        <button className={styles.signUpBtn} onClick={()=>navigate('/register')} >Sign Up</button>
+                        <button className={styles.signUpBtn} onClick={() => navigate('/register')} >Sign Up</button>
                     </div>
 
 
-                    <button className={styles.menuBtn}>
+                    <button onClick={openMenu} className={styles.menuBtn}>
                         <MdMenu size={24} />
                     </button>
+
+                    {isOpen ? <MobileNav handleClose={closeMenu} /> : null}
 
                 </nav>
 
@@ -180,12 +205,12 @@ export default function LandingPage() {
                     <h1>Understand your <span>fertility,</span> improve your future.</h1>
                     <p>Build better habits, lower your risk, and get personalized
                         recommendations for a more fertile tomorrow.</p>
-                    <button>Start Your Assessment</button>
+                    <button onClick={()=>navigate('/login')}>Start Your Assessment</button>
                 </div>
             </div>
 
 
-            <div className={styles.cards}>
+            <div id="features" className={styles.cards}>
                 <Card
                     icon={Plant}
                     title="Habit & Lifestyle Tracker"
@@ -246,10 +271,10 @@ export default function LandingPage() {
                 </div>
             </div>
 
-            <div className={styles.faq}>
+            <div id='faq' className={styles.faq}>
                 <h2>Your questions answered</h2>
                 <div className={styles.accordion}>
-                 {faqContent}
+                    {faqContent}
                 </div>
             </div>
 
@@ -258,7 +283,7 @@ export default function LandingPage() {
                     <h1>Take an in-depth fertility assessment
                         to understand your unique
                         health profile.</h1>
-                    <button>Start Assessment</button>
+                    <button onClick={()=>navigate('/login')}>Start Assessment</button>
                 </div>
                 <div className={styles.image}>
                     <img src={Drug} alt="Temi will provide it" />

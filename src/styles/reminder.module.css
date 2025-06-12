@@ -35,6 +35,7 @@
 .alerts {
     grid-area: alerts;
     height: fit-content;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 24px;

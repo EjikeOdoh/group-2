@@ -6,11 +6,11 @@ export const AuthReducerContext= createContext(null)
 function authReducer(state, action) {
     switch (action.type) {
         case true: {
-            return true
+            return action.token
         }
 
         case false: {
-            return false
+            return null
         }
     
         default:

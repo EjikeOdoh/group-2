@@ -8,10 +8,15 @@ import LightBtn from '../components/LightBtn'
 import { SiGoogle } from 'react-icons/si'
 import { Link, useNavigate } from 'react-router'
 import { manageServerCall } from '../api/api'
+import { useContext, useState } from 'react'
+import { AuthReducerContext } from '../context/AuthContext'
 
 export default function Signup() {
 
     const navigate = useNavigate()
+    const dispatch = useContext(AuthReducerContext)
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -19,17 +24,21 @@ export default function Signup() {
         const data = Object.fromEntries(formData)
 
         console.log(data);
-        manageServerCall('post','user/register/',{},data)
-        .then(data => {
-            console.log(data)
-            // redirect here to questions or dashboard
-            navigate('/questions');
-        })
-        .catch(err => {
-            console.log(err)
-            const errors = Object.values(err)
-            alert(errors[0])
-        })
+        setIsLoading(true)
+        manageServerCall('post', 'user/register/', {}, data)
+            .then(data => {
+                console.log(data)
+                dispatch({
+                    type: true,
+                    token: data.token
+                })
+                navigate('/questions');
+            })
+            .catch(err => {
+                console.log(err)
+                const errors = Object.values(err)
+                alert(errors[0])
+            }).finally(() => setIsLoading(false))
 
     }
 
@@ -39,7 +48,7 @@ export default function Signup() {
 
                 <h1>Create Account</h1>
 
-                <form onSubmit={e=>{handleSignUp(e)}} className={styles.myForm}>
+                <form onSubmit={e => { handleSignUp(e) }} className={styles.myForm}>
                     <Input label="First Name" name="first_name" />
                     <Input label="Last Name" name="last_name" />
                     <Input label="Username" name="username" />
@@ -55,7 +64,7 @@ export default function Signup() {
 
                     <p>By creating an account,  you  agreed to the Terms and Private Policy. </p>
 
-                    <Button label="Create Account" />
+                    <Button label="Create Account" loading={isLoading} />
 
 
                 </form>

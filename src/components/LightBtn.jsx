@@ -1,10 +1,19 @@
 import styles from '../styles/lightBtn.module.css'
 
-export default function LightBtn(props) {
+export default function LightBtn({ label, icon, handleClick, loading }) {
   return (
-       <button onClick={props.handleClick} className={styles.btn}>
-           {props.icon}
-           {props.label}
-       </button>
+    <button
+      onClick={handleClick}
+      className={styles.btn}
+      disabled={loading}
+    >
+      {loading ? (
+        <span className={styles.spinner}></span>
+      ) : (
+        <>
+          {label} {icon}
+        </>
+      )}
+    </button>
   )
 }

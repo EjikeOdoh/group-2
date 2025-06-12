@@ -44,7 +44,7 @@ export default function Login() {
                 <h1>Welcome back! Select method to log in:</h1>
 
                 <form className={styles.myForm} onSubmit={(e)=>{handleLogin(e)}}>
-                    <Input label="Email Address" name="username"
+                    <Input label="Username" name="username"
                         icon={<BiEnvelope style={{ minWidth: '16px' }} />} />
                         
                     <Input label="Password"

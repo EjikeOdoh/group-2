@@ -1,6 +1,7 @@
 .container {
     height: 100svh;
     scrollbar-width: none;
+    background-color: var(--light-bg);
 }
 
 .content {

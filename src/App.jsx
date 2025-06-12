@@ -28,17 +28,12 @@ function Navigation() {
   return (
     <BrowserRouter>
       <Routes>
-
         {
           isLoggedIn ?
             (
               <>
                 <Route path="/" element={<Protected />}>
-                  <Route
-                    index
-                    element={<Dashboard />}
-                  />
-
+                  <Route index element={<Dashboard />} />
                   <Route
                     path="habit-tracker"
                     element={<HabitTracker />}
@@ -63,13 +58,22 @@ function Navigation() {
                     path="plan"
                     element={<Plan />}
                   />
+                  <Route path='/report' element={<Report />} />
+                  <Route
+                    path="questions"
+                    element={<Questionaire />}
+                  />
+                  <Route
+                    path="report"
+                    element={<Report />}
+                  />
 
                   <Route
                     path="*"
                     element={<Dashboard />}
                   />
                 </Route>
-                <Route path='/report' element={<Report />} />
+
               </>
             ) :
             (
@@ -86,14 +90,6 @@ function Navigation() {
                   <Route
                     path="register"
                     element={<Signup />}
-                  />
-                  <Route
-                    path="questions"
-                    element={<Questionaire />}
-                  />
-                  <Route
-                    path="report"
-                    element={<Report />}
                   />
                   <Route
                     path="forgot-password"

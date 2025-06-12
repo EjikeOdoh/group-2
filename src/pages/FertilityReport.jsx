@@ -38,7 +38,7 @@ export default function FertilityReport() {
                             </div>
                         </div>
                     </div>
-                    <Button label="Take another Assessement" handleClick={() => navigate("/")} />
+                    <Button label="Take another Assessement" handleClick={() => navigate("/questions")} />
                 </div>
             </div>
 

@@ -42,3 +42,8 @@
     padding-block: 16px;
     color: var(--primary-border);
 }
+
+.active {
+    background-color: #EFF8FF;
+    border: 1px solid var(--light-bg);
+}

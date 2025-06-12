@@ -1,6 +1,6 @@
 import { MdClose, MdMenu } from 'react-icons/md'
 import styles from '../styles/mobileNav.module.css'
-import { Link } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 export default function MobileNav(props) {
   return (
@@ -10,7 +10,7 @@ export default function MobileNav(props) {
       </button>
 
       <ul className={styles.menu}>
-        <li><a onClick={props.handleClose}>Home</a></li>
+        <li><NavLink to="/" className={({isActive})=> isActive ? styles.active: undefined} onClick={props.handleClose}>Home</NavLink></li>
         <li><a href="#features" onClick={props.handleClose}>Features</a></li>
         <li><a onClick={props.handleClose}>About us</a></li>
         <li><a href="#faq" onClick={props.handleClose}>FAQ</a></li>

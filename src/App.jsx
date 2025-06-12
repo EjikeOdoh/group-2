@@ -33,6 +33,14 @@ function Navigation() {
           isLoggedIn ?
             (
               <>
+                <Route
+                  path="report"
+                  element={<Report />}
+                />
+                  <Route
+                    path="questions"
+                    element={<Questionaire />}
+                  />
                 <Route path="/" element={<Protected />}>
                   <Route index element={<Dashboard />} />
                   <Route
@@ -59,16 +67,8 @@ function Navigation() {
                     path="plan"
                     element={<Plan />}
                   />
-                  <Route path='/report' element={<Report />} />
-                  <Route
-                    path="questions"
-                    element={<Questionaire />}
-                  />
-                  <Route
-                    path="report"
-                    element={<Report />}
-                  />
-
+                  <Route path='report' element={<Report />} />
+                
                   <Route
                     path="notifications"
                     element={<Notification />}

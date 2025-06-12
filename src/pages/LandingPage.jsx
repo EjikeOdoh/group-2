@@ -162,7 +162,7 @@ export default function LandingPage() {
         } else {
             document.body.style.overflow = '';
         }
-    
+
         return () => {
             document.body.style.overflow = '';
         };
@@ -175,8 +175,6 @@ export default function LandingPage() {
                     <div className={styles.logo}>
                         <img src={Logo} alt="Logo" />
                     </div>
-
-
                     <ul className={styles.menu}>
                         <li><a href="">Home</a></li>
                         <li><a href="#features">Features</a></li>
@@ -205,7 +203,7 @@ export default function LandingPage() {
                     <h1>Understand your <span>fertility,</span> improve your future.</h1>
                     <p>Build better habits, lower your risk, and get personalized
                         recommendations for a more fertile tomorrow.</p>
-                    <button onClick={()=>navigate('/login')}>Start Your Assessment</button>
+                    <button onClick={() => navigate('/login')}>Start Your Assessment</button>
                 </div>
             </div>
 
@@ -283,7 +281,7 @@ export default function LandingPage() {
                     <h1>Take an in-depth fertility assessment
                         to understand your unique
                         health profile.</h1>
-                    <button onClick={()=>navigate('/login')}>Start Assessment</button>
+                    <button onClick={() => navigate('/login')}>Start Assessment</button>
                 </div>
                 <div className={styles.image}>
                     <img src={Drug} alt="Temi will provide it" />

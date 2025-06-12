@@ -11,7 +11,7 @@ export default function LightBtn({ label, icon, handleClick, loading }) {
         <span className={styles.spinner}></span>
       ) : (
         <>
-          {label} {icon}
+         {icon} {label}
         </>
       )}
     </button>

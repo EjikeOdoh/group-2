@@ -12,7 +12,7 @@ export default function Button({ label, icon, handleClick, loading }) {
         <span className={styles.spinner}></span>
       ) : (
         <>
-         {icon} {label} 
+       {label} {icon} 
         </>
       )}
     </button>

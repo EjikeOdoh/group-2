@@ -27,64 +27,67 @@ export default function Questionaire() {
   const [userResponse, setResponse] = useState({})
 
   const assessmentWeight = {
-    age:{
-      "18-24":0,
-      "25-30":2,
-      "31-36":4,
-      "37 or older":5
+    age: {
+      "18-24": 0,
+      "25-30": 2,
+      "31-36": 4,
+      "37 or older": 5
     },
-    childhoodIllness:{
-      "None":0,
-      "Chicken Pox":5,
-      "Mumps":5,
-      "Measles":5
+    childhoodIllness: {
+      "None": 0,
+      "Chicken Pox": 5,
+      "Mumps": 5,
+      "Measles": 5
     },
-    physicalTrauma:{
-      "Yes":5,
-      "No":0,
-      "None":0
+    physicalTrauma: {
+      "Yes": 5,
+      "No": 0,
+      "None": 0
     },
-    consumeAlcohol : {
+    consumeAlcohol: {
       "Never": 0,
-      "Occasionally (1-2 times/month)" :2,
-      "Weekly (1-2 times/week)" :4,
-      "Frequently (3+ times/week)":5
+      "Occasionally (1-2 times/month)": 2,
+      "Weekly (1-2 times/week)": 4,
+      "Frequently (3+ times/week)": 5
     },
-    smoke : {
-      "Never" :0,
-      "Occasionally":3,
-      "Daily" : 5
+    smoke: {
+      "Never": 0,
+      "Occasionally": 3,
+      "Daily": 5
     },
-    workTime:{
-      "Less than 3 hours":1,
-      "3 to 5 hours" :2,
-      "6 to 9 hours":4,
-      "10+ hours":5
+    workTime: {
+      "Less than 3 hours": 1,
+      "3 to 5 hours": 2,
+      "6 to 9 hours": 4,
+      "10+ hours": 5
     },
-    exercise:{
-      "Rarely":5,
-      "1 -- 2 times/week" :3,
-      "3 -- 5 times/week":1,
-      "Daily":0
+    exercise: {
+      "Rarely": 5,
+      "1 -- 2 times/week": 3,
+      "3 -- 5 times/week": 1,
+      "Daily": 0
     }
   }
 
-  const caculateAndSaveAssessmentResult=()=>{
+  const caculateAndSaveAssessmentResult = () => {
     const max_score = 5
     const max_total = Object.keys(userResponse).length * max_score
 
     let userScore = 0
-    for(const answer in userResponse){
+    for (const answer in userResponse) {
       userScore += userResponse[answer]
     }
 
-    const result = Math.round((userScore*100)/max_total)
+    const result = Math.round((userScore * 100) / max_total)
     console.log("result is ", result);
 
-    manageServerCall('post','user/user-info/',{},{result:result},true)
-    .then(res=>{openModal(questionaireRef) })
-    .catch(err=>{alert("Something went wrong, please try again later")})
-    
+    manageServerCall('post', 'user/user-info/', {}, { result: result }, true)
+      .then(res => {
+        console.log(res)
+        openModal(questionaireRef)
+      })
+      .catch(err => { alert("Something went wrong, please try again later") })
+
 
     //max_total == 100%
     //userScore == X
@@ -95,9 +98,9 @@ export default function Questionaire() {
     setFormData(prev => ({ ...prev, [name]: value }))
 
     try {
-     if(Object.keys(assessmentWeight).includes(name)){
-      setResponse(prev=>({...prev, [name]:assessmentWeight[name][value]}))
-    } 
+      if (Object.keys(assessmentWeight).includes(name)) {
+        setResponse(prev => ({ ...prev, [name]: assessmentWeight[name][value] }))
+      }
     } catch (error) {
       console.log("SOmething went wrong, maybe question options has changed");
     }
@@ -106,13 +109,13 @@ export default function Questionaire() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(formData, " ",userResponse)
+    console.log(formData, " ", userResponse)
     caculateAndSaveAssessmentResult()
   }
 
   const nextQuestion = () => {
     index === 10 ? openModal(questionaireRef) :
-    setIndex(prev => prev + 1)
+      setIndex(prev => prev + 1)
   }
 
   const prevQuestion = () => {
@@ -127,9 +130,6 @@ export default function Questionaire() {
       })
   }
 
-  const getInfo = (formData) => {
-    console.log(formData)
-  }
 
   return (
     <>
@@ -199,7 +199,7 @@ export default function Questionaire() {
                     <>
                       <div>
                         <h2>Have you experienced any of the following childhood illnesses?
-                         </h2>
+                        </h2>
                         <small>(Select all that apply)</small>
                       </div>
                       <div className={styles.options}>
@@ -219,8 +219,8 @@ export default function Questionaire() {
                     <>
                       <div>
                         <h2>Have you experienced any major physical trauma (e.g., accidents, sports injuries)?
-                          </h2>
-                       
+                        </h2>
+
                       </div>
                       <div className={styles.options}>
                         <Option label='physicalTrauma' handleChange={handleChange} value="Yes" />
@@ -260,7 +260,7 @@ export default function Questionaire() {
                       <div>
                         <h2>Do you smoke cigarettes or other substances?</h2>
                       </div>
-                      
+
                       <div className={styles.options}>
                         <Option label='smoke' handleChange={handleChange} value="Never" />
                         <Option label='smoke' handleChange={handleChange} value="Occasionally" />
@@ -279,7 +279,7 @@ export default function Questionaire() {
                       <div>
                         <h2>On average, how many hours do you sit per day (e.g, work/screen time)?</h2>
                       </div>
-                      
+
                       <div className={styles.options}>
                         <Option label='workTime' handleChange={handleChange} value="Less than 3 hours" />
                         <Option label='workTime' handleChange={handleChange} value="3 to 5 hours" />
@@ -344,26 +344,23 @@ export default function Questionaire() {
           </div>
         </div>
       </Layout>
-            {/* Complete questionnaire dialog */}
-      
-                  <Dialog ref={questionaireRef}>
-                      <div className={styles.modal}>
-                          <IoMdCheckmark color='#56A3E6' size={100} />
-                          <div className={styles.salute}>
-                              <h2>Questionnaire completed</h2>
-                              <p>Thank you for taking the time to provide this information.</p>
-                          </div>
-                          <Button label="View Fertility Report"
-                              handleClick={() => {
-                                dispatch({
-                                  type: true
-                                })
-                                closeModal(questionaireRef)
-                                navigate("/report")
-                              }}
-                          />
-                      </div>
-                  </Dialog>
+      {/* Complete questionnaire dialog */}
+
+      <Dialog ref={questionaireRef}>
+        <div className={styles.modal}>
+          <IoMdCheckmark color='#56A3E6' size={100} />
+          <div className={styles.salute}>
+            <h2>Questionnaire completed</h2>
+            <p>Thank you for taking the time to provide this information.</p>
+          </div>
+          <Button label="View Fertility Report"
+            handleClick={() => {
+              closeModal(questionaireRef)
+              navigate("/")
+            }}
+          />
+        </div>
+      </Dialog>
     </>
   )
 }

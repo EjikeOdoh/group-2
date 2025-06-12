@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from 'react-router'
 import SideBar from '../components/SideBar'
 import styles from '../styles/protected.module.css'
 import Dialog from '../components/Dialog'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import Button from '../components/Button'
 import LightBtn from '../components/LightBtn'
 import { IoMdNotificationsOutline } from 'react-icons/io'
@@ -10,10 +10,12 @@ import Avatar from '../thumbnails/avatar.jpg'
 
 import { getUserInfo } from '../api/utils'
 import { useState, useEffect } from 'react'
+import { AuthReducerContext } from '../context/AuthContext'
 
 export default function Protected() {
 
   const navigate = useNavigate()
+  const dispatch = useContext(AuthReducerContext)
 
   const logOutRef = useRef(null)
 
@@ -30,8 +32,13 @@ export default function Protected() {
   useEffect(()=>{
       getUserInfo()
       .then(res=>{
+          if (res.assessment ===  0 ) {
+            navigate("/questions")
+          }
           setUserInfo(res)
           console.log(res);
+
+    
       })
   },[])
   
@@ -66,7 +73,15 @@ export default function Protected() {
           </div>
 
           <div className={styles.btns}>
-            <Button label="Log out" />
+            <Button label="Log out" handleClick={
+              () => {
+                cancelLogout()
+                dispatch({
+                  type: false,
+                  token: null
+                })
+              }
+            } />
             <LightBtn label="Cancel" handleClick={cancelLogout} />
           </div>
         </div>

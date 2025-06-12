@@ -37,10 +37,10 @@ function Navigation() {
                   path="report"
                   element={<Report />}
                 />
-                  <Route
-                    path="questions"
-                    element={<Questionaire />}
-                  />
+                <Route
+                  path="questions"
+                  element={<Questionaire />}
+                />
                 <Route path="/" element={<Protected />}>
                   <Route index element={<Dashboard />} />
                   <Route
@@ -68,7 +68,7 @@ function Navigation() {
                     element={<Plan />}
                   />
                   <Route path='report' element={<Report />} />
-                
+
                   <Route
                     path="notifications"
                     element={<Notification />}
@@ -80,10 +80,6 @@ function Navigation() {
                   />
 
                 </Route>
-                <Route
-                  path='/report'
-                  element={<Report />}
-                />
               </>
             ) :
             (

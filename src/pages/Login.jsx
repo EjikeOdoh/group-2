@@ -9,13 +9,15 @@ import { SiGoogle } from 'react-icons/si'
 import { BiEnvelope } from 'react-icons/bi'
 import { IoLockClosedOutline } from 'react-icons/io5'
 import { Link } from 'react-router'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthReducerContext } from '../context/AuthContext'
 import { manageServerCall } from '../api/api'
 
 export default function Login() {
 
     const dispatch = useContext(AuthReducerContext)
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -25,16 +27,17 @@ export default function Login() {
         const data = Object.fromEntries(formData)
 
         console.log(data);
-        
+        setIsLoading(true)
         manageServerCall("post","user/login/",{},data)
-        .then(()=>{
+        .then((data)=>{
             dispatch({
-                type: true
+                type: true,
+                token: data.token
             })
         })
         .catch(err=>{
             alert("Invalid Credentials")
-        })
+        }).finally(()=>setIsLoading(false))
     }
 
     return (
@@ -58,7 +61,7 @@ export default function Login() {
 
                     <Link to="/forgot-password" className={styles.forgotPassword}>Forgot password </Link>
 
-                    <Button label="Log in"/>
+                    <Button label="Log in" loading={isLoading} />
 
 
                 </form>
@@ -69,8 +72,6 @@ export default function Login() {
                 <div className={styles.btns}>
                     {/* Custom buttons */}
                     <LightBtn
-
-                        handleClick={handleLogin}
                         icon={<SiGoogle color="var(--dark)" />}
                         label="Sign in with Google" />
                     <LightBtn

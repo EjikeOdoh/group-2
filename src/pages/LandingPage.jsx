@@ -205,7 +205,7 @@ export default function LandingPage() {
                     <h1>Understand your <span>fertility,</span> improve your future.</h1>
                     <p>Build better habits, lower your risk, and get personalized
                         recommendations for a more fertile tomorrow.</p>
-                    <button>Start Your Assessment</button>
+                    <button onClick={()=>navigate('/login')}>Start Your Assessment</button>
                 </div>
             </div>
 
@@ -283,7 +283,7 @@ export default function LandingPage() {
                     <h1>Take an in-depth fertility assessment
                         to understand your unique
                         health profile.</h1>
-                    <button>Start Assessment</button>
+                    <button onClick={()=>navigate('/login')}>Start Assessment</button>
                 </div>
                 <div className={styles.image}>
                     <img src={Drug} alt="Temi will provide it" />

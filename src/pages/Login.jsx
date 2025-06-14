@@ -12,6 +12,7 @@ import { Link } from 'react-router'
 import { useContext, useState } from 'react'
 import { AuthReducerContext } from '../context/AuthContext'
 import { manageServerCall } from '../api/api'
+import PasswordInput from '../components/PasswordInput'
 
 export default function Login() {
 
@@ -32,7 +33,7 @@ export default function Login() {
         .then((data)=>{
             dispatch({
                 type: true,
-                token: data.token
+                token: true
             })
         })
         .catch(err=>{
@@ -49,15 +50,8 @@ export default function Login() {
                 <form className={styles.myForm} onSubmit={(e)=>{handleLogin(e)}}>
                     <Input label="Username" name="username"
                         icon={<BiEnvelope style={{ minWidth: '16px' }} />} />
-                        
-                    <Input label="Password"
-                        name="password"
-                        icon={<IoLockClosedOutline style={{ minWidth: '16px' }} />}
-                        btn={<button>
-                            <FiEyeOff style={{ minWidth: '16px' }} />
-                        </button>
-                        }
-                    />
+
+                    <PasswordInput />
 
                     <Link to="/forgot-password" className={styles.forgotPassword}>Forgot password </Link>
 

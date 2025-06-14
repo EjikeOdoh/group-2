@@ -103,32 +103,32 @@ export default function LandingPage() {
         {
             "id": 1,
             "active": true,
-            "question": "How accurate are the fertility insights?",
-            "answer": "Our insights are based on the latest scientific research and tailored to your personal data. While we can't replace medical tests, we provide reliable guidance to help you understand your fertility better."
+            "question": "What does this app do?",
+            "answer": "Our app helps men understand and improve their fertility through personalized insights, habit tracking, and expert-backed guidance. It’s designed to support sperm health and overall reproductive wellness."
         },
         {
             "id": 2,
             "active": false,
-            "question": "Is my data secure?",
-            "answer": "Absolutely. We use bank-level encryption and never share your personal health data with third parties without your explicit consent."
+            "question": "How is my fertility assessed in the app?",
+            "answer": "You’ll answer a brief onboarding questionnaire covering lifestyle, health history, and habits. Based on your input and (optionally) lab data, the app provides a fertility wellness score and tailored recommendations."
         },
         {
             "id": 3,
             "active": false,
-            "question": "Can women use this app too?",
-            "answer": "While our current focus is on male fertility, we're developing features for couples. Women may find some general wellness insights helpful, but most content is male-specific."
+            "question": "Is my health data private and secure?",
+            "answer": "Absolutely. Your data is encrypted and stored securely. We follow strict privacy standards and never share your information without your explicit consent."
         },
         {
             "id": 4,
             "active": false,
-            "question": "What habits does the app track?",
+            "question": "Is there a premium version",
             "answer": "We track factors like sleep, exercise, nutrition, stress, and exposure to environmental toxins - all of which research shows can impact sperm health and fertility."
         },
         {
             "id": 5,
             "active": false,
-            "question": "Do you offer medical advice?",
-            "answer": "We provide educational information and lifestyle recommendations, but always consult a healthcare professional for medical advice or if you have specific fertility concerns."
+            "question": "Does the app offer medical or supplement advice?",
+            "answer": "The app provides evidence-based educational content on fertility-friendly lifestyle choices and supplements, but it does not prescribe treatments. Always consult your doctor before starting any new regimen."
         }
     ])
 

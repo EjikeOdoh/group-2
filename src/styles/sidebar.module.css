@@ -36,6 +36,8 @@
     padding: 24px;
     position: fixed;
     background-color: white; 
+    z-index: 20;
+    top: 0;
 }
 
 
@@ -57,3 +59,4 @@
     flex-direction: column;
     gap: 24px
 }
+

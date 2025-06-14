@@ -133,7 +133,7 @@ export default function Plan() {
                                             <div>
                                                 <h3>Premium Plan</h3>
                                                 <p>20% discount for Premium Plan to get full personalized plans</p>
-                                                <button className={styles.cta}>Upgrade to plan</button>
+                                                <button onClick={()=>openModal(monthlyPlanRef)} className={styles.cta}>Upgrade to plan</button>
                                             </div>
                                         </div> : null
                                     }</>
@@ -143,7 +143,7 @@ export default function Plan() {
                                     <div>
                                         <FiLock size={96} />
                                         <p>Unlock the personalized 60-day plan</p>
-                                        <button>Upgrade to Premium</button>
+                                        <button onClick={()=>openModal(yearlyPlanRef)}>Upgrade to Premium</button>
                                     </div>
                                 </div>
                         }
@@ -239,7 +239,10 @@ export default function Plan() {
                         />
                     </div>
                     <Button label="Buy Premium"
-                        handleClick={() => closeModal(monthlyPlanRef)}
+                        handleClick={() => {
+                            closeModal(monthlyPlanRef)
+                            openModal(successRef)
+                        }}
                     />
                 </div>
             </Dialog>
@@ -275,7 +278,10 @@ export default function Plan() {
                         />
                     </div>
                     <Button label="Buy Premium"
-                        handleClick={() => closeModal(yearlyPlanRef)}
+                        handleClick={() => {
+                            closeModal(yearlyPlanRef)
+                            openModal(successRef)
+                        }}
                     />
                 </div>
             </Dialog>

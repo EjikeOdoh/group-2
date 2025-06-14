@@ -39,7 +39,6 @@ export default function Signup() {
                 const errors = Object.values(err)
                 alert(errors[0])
             }).finally(() => setIsLoading(false))
-
     }
 
     return (

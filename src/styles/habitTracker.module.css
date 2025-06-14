@@ -11,7 +11,7 @@
     gap: 24px;
 }
 
-.container > * {
+.container>* {
     display: flex;
     flex-direction: column;
 }
@@ -67,9 +67,6 @@
     padding-bottom: 40px;
     display: grid;
     gap: 8px;
-}
-
-.container .stats .tipsContainer .tips {
     font-size: 1rem;
     color: var(--primary-border);
 }
@@ -112,10 +109,14 @@
     color: var(--primary-border);
 }
 
+.habit .top .label p:first-of-type {
+    font-weight: 500;
+}
+
 .habit .bottom small {
     display: block;
     font-size: 0.875rem;
-    color: var(--primary-border) ;
+    color: var(--primary-border);
 }
 
 /* Styling for streak component */
@@ -132,4 +133,60 @@
     font-weight: 600;
     font-size: 1.125rem;
     color: var(--primary-border);
+}
+
+
+
+@media (max-width: 760px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .habits .habitCards {
+        padding: 0;
+    }
+
+    .container .stats .tipsContainer {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .container .stats .tipsContainer h3 {
+        font-size: 0.8rem;
+    }
+
+
+    .container .stats .tipsContainer .tips {
+        font-size: 0.8rem;
+    }
+
+    .container>.chart>div {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    /* Styling for habit component */
+    .habit {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .habit .top .label p {
+        font-size: 0.8rem;
+    }
+
+    .habit .bottom small {
+        font-size: 0.65rem;
+    }
+
+    /* Styling for streak component */
+    .streak p {
+        font-size: 0.875rem;
+    }
+
+    /* Styling for header component */
+    .header .label {
+        font-size: 0.8rem;
+    }
 }

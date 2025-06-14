@@ -45,6 +45,15 @@
     overflow: hidden;
 }
 
+.content > .mobileHeader {
+    display: none;
+}
+
+.content > .outlet {
+    padding-top: 100px;
+    padding-inline: 24px; 
+}
+
 .notify {
     background-color: #D2D5DB;
 }
@@ -85,4 +94,57 @@
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.mobile {
+    display: none;
+}
+
+
+@media (max-width: 760px) {
+    .container {
+        padding: 24px;
+    }
+
+    .container .desktop{
+        display: none;
+    }
+
+    .mobile {
+        position: relative;
+        display: block;
+        margin-left: -100%;
+       transition: all 0.5s linear;
+    }
+
+    .content {
+        margin: 0;
+    }
+
+
+    .content > .top {
+        display: none;
+    }
+
+    .content > .mobileHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 48px;
+    }
+
+    .content > .mobileHeader > div {
+        display: flex;
+    }
+
+    .content > .mobileHeader > button {
+        padding: 16px;
+        font-size: 1.5rem;
+        display: grid;
+        place-content: center;
+    }
+
+    .content > .outlet {
+        padding: 0;
+    }
 }

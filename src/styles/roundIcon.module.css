@@ -10,3 +10,13 @@
     font-size: 1.8rem;
     color: #60B5FF;
 }
+
+@media (max-width: 760px) {
+    .icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        font-size: 1rem;
+    }
+}

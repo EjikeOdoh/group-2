@@ -54,3 +54,10 @@ body {
   max-height: 1200px;
   color: var(--text);
 }
+
+
+@media (max-width: 760px) {
+  body {
+    font-size: 0.875rem;
+  }
+}

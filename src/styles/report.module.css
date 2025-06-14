@@ -98,3 +98,39 @@ font-weight: 600;
 .cards .bottom p {
     color: var(--text);
 }
+
+
+@media (max-width: 760px) {
+
+    .heading {
+        gap: 16px;
+    }
+
+    .heading > h1 {
+        font-size: 1.25rem;
+    }
+
+    .heading > p {
+        font-size: 0.875rem;
+    }
+
+    .cards .top .card {
+        padding: 16px;
+    }
+
+    .cards .top .card h3 {
+        font-size: 1rem;
+    }
+
+    .cards .top .card p {
+        font-size: 0.875rem;
+    }
+
+    .cards .bottom {
+        padding: 16px;
+    }
+
+    .cards .bottom h3 {
+        font-size: 1rem;
+    }
+}

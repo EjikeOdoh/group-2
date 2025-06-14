@@ -97,10 +97,16 @@
 }
 
 @media (max-width: 760px) {
+
+    .container {
+        width: 100vw;
+    }
+
     .parent {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 24px;
     }
 
     .content {
@@ -108,12 +114,6 @@
     }
 
     .navbar {
-        padding: 24px;
-    }
-
-    .parent {
-        display: flex;
-        flex-direction: column;
         padding: 24px;
     }
 

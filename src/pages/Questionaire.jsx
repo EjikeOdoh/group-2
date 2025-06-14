@@ -338,9 +338,6 @@ export default function Questionaire() {
                 index === 10 ? null : <Button label="Next Question" icon={<FaArrowRight />} handleClick={nextQuestion} />
               }
             </div>
-
-
-
           </div>
         </div>
       </Layout>

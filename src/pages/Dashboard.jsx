@@ -12,8 +12,10 @@ import { Gauge, gaugeClasses } from '@mui/x-charts'
 import Pie from '../components/Pie'
 import Toggle from '../components/Toggle'
 import { useNavigate } from 'react-router'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getUserInfo } from '../api/utils'
+import { IOSSwitch } from '../components/Switch'
+import { Checkbox } from '@mui/material'
 
 export function Habit(props) {
     return (
@@ -33,7 +35,13 @@ export function Habit(props) {
 export function Plan(props) {
     return (
         <div className={styles.plan}>
-            <input type='checkbox' />
+            <Checkbox sx={{
+                color: '#43B75D',
+                '&.Mui-checked': {
+                    color: '#43B75D',
+                },
+
+            }} />
             <label>{props.text}</label>
         </div>
     )
@@ -48,13 +56,13 @@ export function Reminder(props) {
                 </div>
                 <p>{props.text}</p>
             </div>
-            <Toggle />
+            <IOSSwitch checked={props.checked} onChange={props.handleToggle} />
         </div>
     )
 }
 
 
-function BlogCard (props) {
+function BlogCard(props) {
     return (
         <div className={styles.blogCard}>
             <div className={styles.thumbnail}>
@@ -71,25 +79,25 @@ export default function Dashboard() {
     const navigate = useNavigate()
     const [info, setUserInfo] = useState(0)
 
-    useEffect(()=>{
+    useEffect(() => {
         getUserInfo()
-        .then(res=>{
-            setUserInfo(res)
-            console.log(res);
-        })
-    },[])
+            .then(res => {
+                setUserInfo(res)
+                console.log(res);
+            })
+    }, [])
 
     return (
         <div className={styles.container}>
             <div className={styles.riskScore}>
                 <h2 className={styles.subHeading}>Your Fertility Risk Score</h2>
                 <div className={styles.chartContainer}>
-                 
+
                     <Pie value={info.assessment} />
 
                     <div>
-                        <p>Your current risk score is high</p>
-                        <Button label="View Full Report" handleClick={()=>navigate("/fertility-report")} />
+                        <p>Your current risk score is {info.assessment >= 50 ? "high" : "low"}</p>
+                        <Button label="View Full Report" handleClick={() => navigate("/fertility-report")} />
                     </div>
                 </div>
             </div>
@@ -135,7 +143,7 @@ export default function Dashboard() {
                 <div className={styles.reminders}>
                     <Reminder icon={<PiPillFill />} text="Take multivitamins" />
                     <Reminder icon={<FaWalking />} text="Walk for 30 minutes" active={true} />
-                    <Reminder icon={<IoTimeOutline />} text="Track sleep" />                
+                    <Reminder icon={<IoTimeOutline />} text="Track sleep" />
                 </div>
             </div>
             <div className={styles.educationalTips}>

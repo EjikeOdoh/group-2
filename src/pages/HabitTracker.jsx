@@ -98,10 +98,7 @@ export default function HabitTracker() {
                     />
                 </div>
             </div>
-            <div className={styles.chart}>
-                {/* Chart should come in here */}
-                <SleepChart />
-            </div>
+        
             <div className={styles.stats}>
                 <div className={styles.streaks}>
                     <Streak 
@@ -129,6 +126,11 @@ export default function HabitTracker() {
                         <p>Try a 10-min walk today</p>
                     </div>
                 </div>
+            </div>
+
+            <div className={styles.chart}>
+                {/* Chart should come in here */}
+                <SleepChart />
             </div>
         </div>
     )

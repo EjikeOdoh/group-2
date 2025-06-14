@@ -13,11 +13,11 @@ export default function Pie(props) {
             outerRadius="100%"
             sx={{
                 [`& .${gaugeClasses.valueArc}`]: {
-                    fill: (theme) => props.value < 50 ? '#EE443F' : "#43B75D",
+                    fill: (theme) => props.value > 50 ? '#EE443F' : "#43B75D",
                 },
                 fontFamily:'inherit'
             }}
-            text={props.value < 50 ? "High Risk" : "Low Risk"}
+            text={props.value > 50 ? "High Risk" : "Low Risk"}
         />
     )
 }

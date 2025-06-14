@@ -6,7 +6,7 @@ export default function Input(props) {
         <label>{props.label}</label>
         <div className={styles.input}>
             {props.icon}
-            <input name={props.name} placeholder={props.placeholder} />
+            <input type={props.type || "text"} name={props.name} placeholder={props.placeholder} />
             {props.btn}
         </div>
         <small>{props.notice}</small>

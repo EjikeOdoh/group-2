@@ -129,11 +129,11 @@ export default function Plan() {
                                     </div>
                                     {
                                         active === 1 ? <div className={styles.bottom}>
-                                            <RiMoneyDollarBoxLine size={24} />
+                                            <RiMoneyDollarBoxLine style={{minWidth: '24px'}} size={24} />
                                             <div>
                                                 <h3>Premium Plan</h3>
                                                 <p>20% discount for Premium Plan to get full personalized plans</p>
-                                                <button onClick={()=>openModal(monthlyPlanRef)} className={styles.cta}>Upgrade to plan</button>
+                                                <button onClick={() => openModal(monthlyPlanRef)} className={styles.cta}>Upgrade to plan</button>
                                             </div>
                                         </div> : null
                                     }</>
@@ -143,7 +143,7 @@ export default function Plan() {
                                     <div>
                                         <FiLock size={96} />
                                         <p>Unlock the personalized 60-day plan</p>
-                                        <button onClick={()=>openModal(yearlyPlanRef)}>Upgrade to Premium</button>
+                                        <button onClick={() => openModal(yearlyPlanRef)}>Upgrade to Premium</button>
                                     </div>
                                 </div>
                         }

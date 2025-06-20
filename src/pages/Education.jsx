@@ -44,43 +44,19 @@ export default function Education() {
                     <div className={styles.chips}>
                         <Chip
                             label="Nutrition"
-                            sx={{
-                                backgroundColor: "var(--light-bg)",
-                                fontSize: '1rem',
-                                fontWeight: 600,
-                                fontFamily: 'inherit',
-                                color: "var(--primary-border)",
-                                paddingInline: "20px",
-                                borderRadius: "8px",
-                                height: "44px"
-
-                            }} />
+                            className={styles.chip}
+                            
+                          />
 
                         <Chip
                             label="Lifestyle"
-                            sx={{
-                                backgroundColor: "var(--light-bg)",
-                                fontSize: '1rem',
-                                fontWeight: 600,
-                                fontFamily: 'inherit',
-                                color: "var(--primary-border)",
-                                paddingInline: "20px",
-                                borderRadius: "8px",
-                                height: "44px"
-                            }} />
+                            className={styles.chip}
+                          />
 
                         <Chip
                             label="Myths"
-                            sx={{
-                                backgroundColor: "var(--light-bg)",
-                                fontSize: '1rem',
-                                fontWeight: 600,
-                                fontFamily: 'inherit',
-                                color: "var(--primary-border)",
-                                paddingInline: "20px",
-                                borderRadius: "8px",
-                                height: "44px"
-                            }} />
+                            className={styles.chip}
+                           />
                     </div>
                 </div>
                 <div className={styles.mainCard}>

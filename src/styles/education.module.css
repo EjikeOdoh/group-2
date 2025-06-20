@@ -15,8 +15,8 @@
     display: flex;
     align-items: center;
     background-color: var(--light-bg);
-    border-radius:12px;
-  
+    border-radius: 12px;
+
 }
 
 .cover {
@@ -68,18 +68,30 @@
     gap: 24px;
 }
 
+.chip {
+    background-color: var(--light-bg) !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    font-family: inherit !important;
+    color: var(--primary-border) !important;
+    padding-inline: 20px !important;
+    border-radius: 8px !important;
+    height: 44px !important;
+}
+
 .right {
     display: flex;
     flex-direction: column;
     gap: 24px;
     padding: 32px;
 }
+
 /* Generic */
 
 .blueCard {
     border-radius: 12px;
     padding: 24px;
-    background-color: var(--light-bg); 
+    background-color: var(--light-bg);
 }
 
 .blueCard h3 {
@@ -122,13 +134,13 @@
     gap: 16px;
 }
 
-.line > h3 {
+.line>h3 {
     font-weight: 600;
     font-size: 1rem;
     color: var(--primary-border);
 }
 
-.line > p {
+.line>p {
     color: var(--primary-border);
 }
 
@@ -142,13 +154,13 @@
     text-align: left;
 }
 
-.modal .top > .heading {
+.modal .top>.heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.modal .top > .heading > h3 {
+.modal .top>.heading>h3 {
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--primary-border);
@@ -160,21 +172,21 @@
     gap: 24px;
 }
 
-.modal .top > .heading > .thumbnail {
+.modal .top>.heading>.thumbnail {
     width: 80px;
     height: 80px;
     display: flex;
 }
 
-.modal .top > .heading > .thumbnail img {
+.modal .top>.heading>.thumbnail img {
     object-fit: contain;
 }
 
-.modal .top > p {
+.modal .top>p {
     font-size: 0.875rem;
 }
 
-.modal .bottom > .facts {
+.modal .bottom>.facts {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -187,7 +199,98 @@
     justify-content: flex-end;
 }
 
-.readMore > * {
+.readMore>* {
     width: fit-content;
     padding-inline: 24px;
+}
+
+
+@media (max-width: 760px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .left,
+    .right {
+        padding: 0;
+    }
+
+    .left>h2 {}
+
+    .cover {
+        padding: 16px;
+    }
+
+    .texts h3 {
+        font-size: 1.125rem;
+    }
+
+    .texts p {
+        font-size: 0.75rem
+    }
+
+    .texts button {
+        font-size: 0.75rem;
+    }
+
+    .blueCard {
+        padding: 16px;
+    }
+
+    .blueCard h3 {
+        font-size: 1rem;
+    }
+
+    .chip {
+        height: 32px !important;
+        font-size: 0.875rem !important;
+        padding-inline: 0 !important;
+    }
+
+    /* Styling for card component */
+    .card {
+        padding: 16px;
+    }
+
+    .card h3 {
+        font-size: 0.925rem;
+    }
+
+    .card p {
+        font-size: 0.875rem;
+    }
+
+    /* styling for modal */
+    .modal {
+        width: 100%;
+    }
+
+    .modal .top>.heading>h3 {
+        font-size: 1rem;
+    }
+
+    .readMore>* {
+        height: 40px;
+        font-size: 0.75rem;
+    }
+
+    /* styling for row component */
+    .row {
+        gap: 8px;
+    }
+
+    .line {
+        gap: 8px;
+    }
+
+    .line > h3 {
+        font-size: 0.9rem;
+    }
+
+    .line > p {
+        font-size: 0.75rem;
+    }
 }

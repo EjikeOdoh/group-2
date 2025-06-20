@@ -11,9 +11,7 @@
 .content .top {
     position: fixed;
     height: 80px;
-    width: calc(
-        min(100vw, 1440px) - 250px
-      );
+    width: calc(min(100vw, 1440px) - 250px);
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -22,18 +20,18 @@
     z-index: 50;
 }
 
-.content .top > .salute {
+.content .top>.salute {
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--primary-border);
 }
 
-.content .top > .btns {
+.content .top>.btns {
     display: flex;
     gap: 24px;
 }
 
-.content .top > .btns button {
+.content .top>.btns button {
     min-height: 50px;
     min-width: 50px;
     height: 50px;
@@ -45,13 +43,13 @@
     overflow: hidden;
 }
 
-.content > .mobileHeader {
+.content>.mobileHeader {
     display: none;
 }
 
-.content > .outlet {
+.content>.outlet {
     padding-top: 100px;
-    padding-inline: 24px; 
+    padding-inline: 24px;
 }
 
 .notify {
@@ -72,25 +70,25 @@
     gap: 24px;
 }
 
-.modal > .texts {
+.modal>.texts {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.modal > .texts > h3 {
+.modal>.texts>h3 {
     font-size: 1.25rem;
     color: var(--primary-border);
     font-weight: 600;
 }
 
-.modal > .texts > p {
+.modal>.texts>p {
     font-size: 0.875rem;
     color: var(--text);
 }
 
 
-.modal > .btns {
+.modal>.btns {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -106,15 +104,21 @@
         padding: 24px;
     }
 
-    .container .desktop{
+    .container .desktop {
         display: none;
     }
 
     .mobile {
-        position: relative;
+        position: absolute;
         display: block;
         margin-left: -100%;
-       transition: all 0.5s linear;
+        transition: all 0.5s linear;
+        left: 0;
+        top: 0;
+    }
+
+    .mobile > div {
+        position: absolute !important;
     }
 
     .content {
@@ -122,29 +126,37 @@
     }
 
 
-    .content > .top {
+    .content>.top {
         display: none;
     }
 
-    .content > .mobileHeader {
+    .content>.mobileHeader {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 48px;
     }
 
-    .content > .mobileHeader > div {
+    .content>.mobileHeader>div {
         display: flex;
     }
 
-    .content > .mobileHeader > button {
+    .content>.mobileHeader>button {
         padding: 16px;
         font-size: 1.5rem;
         display: grid;
         place-content: center;
     }
 
-    .content > .outlet {
+    .content>.outlet {
         padding: 0;
+        padding-bottom: 40px;
+    }
+
+    /* styling for logout modal */
+
+    .modal {
+        width: 100%;
+        margin: auto;
     }
 }

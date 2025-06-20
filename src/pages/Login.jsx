@@ -21,24 +21,29 @@ export default function Login() {
     const [isLoading, setIsLoading] = useState(false)
 
     const handleLogin = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        console.log(formData);
 
-        const data = Object.fromEntries(formData)
-
-        console.log(data);
-        setIsLoading(true)
-        manageServerCall("post","user/login/",{},data)
-        .then((data)=>{
-            dispatch({
-                type: true,
-                token: true
-            })
+        dispatch({
+            type: true,
+            token: 111111
         })
-        .catch(err=>{
-            alert("Invalid Credentials")
-        }).finally(()=>setIsLoading(false))
+        // e.preventDefault();
+        // const formData = new FormData(e.target);
+        // console.log(formData);
+
+        // const data = Object.fromEntries(formData)
+
+        // console.log(data);
+        // setIsLoading(true)
+        // manageServerCall("post","user/login/",{},data)
+        // .then((data)=>{
+        //     dispatch({
+        //         type: true,
+        //         token: true
+        //     })
+        // })
+        // .catch(err=>{
+        //     alert("Invalid Credentials")
+        // }).finally(()=>setIsLoading(false))
     }
 
     return (

@@ -77,10 +77,12 @@
 }
 
 .left .bottom .cta {
-    color: #F7F7F7;
+    background-color: #F7F7F7;
+    color: var(--primary);
     font-size: 1rem;
     width: fit-content;
     margin-top: 12px;
+    padding-inline: 20px;
 }
 .right {
     display: flex;
@@ -183,7 +185,6 @@
 }
 
 /* Styling for week component */
-
 .week {
     display: flex;
     flex-direction: column;
@@ -258,4 +259,95 @@
 
 .listItem > p {
     color: var(--primary-border);
+}
+
+
+@media (max-width: 760px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .left, .right {
+        padding: 0;
+    }
+
+    .left .top > p {
+        font-size: 1rem;
+    }
+
+    .left .bottom .cta  {
+        font-size: 0.875rem;
+    }
+
+    .toggleBtn {
+        font-size: 0.875rem;
+    }
+
+    .lock {
+        margin-top: 0;
+    }
+
+    .lock h3 {
+        font-size: 1rem;
+    }
+
+    .lock > div button {
+        font-size: 0.875rem;
+    }
+
+    .right h2 {
+        font-size: 1rem;
+    }
+
+    /* Styling for radio component */
+    .reminder {
+        padding: 16px 0;
+    }
+
+    .reminder .left {
+        gap: 8px;
+    }
+
+    .weeks {
+        margin-bottom: 20px;
+    }
+
+    /* Styling for radio component */
+    .reminder .left .icon {
+        min-width: 40px;
+        width: 40px;
+        min-height: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .reminder .left p {
+        font-size: 0.875rem;
+    }
+
+    /* Styling for modals */
+    
+    .modal {
+        width: 100%;
+        padding: 0;
+        align-items: start;
+    }
+
+    .modal .salute > h2 {
+        width: 100%;
+    }
+
+    .modal > .label {
+        gap: 8px;
+    }
+
+
+    .modal > .salute h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal > .salute p {
+        font-size: 0.875rem;
+    }
 }

@@ -53,6 +53,7 @@ body {
   min-height: 100svh;
   max-height: 1200px;
   color: var(--text);
+  overflow-x: hidden;
 }
 
 

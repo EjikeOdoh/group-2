@@ -200,3 +200,59 @@
 .modal > p {
     color: var(--primary-border);
 }
+
+
+@media (max-width: 760px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .activities {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .activities .activityCards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .alerts {
+        min-width: 100%;
+        padding: 24px 0;
+    }
+
+    /* Styling for alert component */
+    .alert, .alert .top  {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .alert {
+        padding: 16px;
+    }
+
+    /* Styling for activity component */
+    .activity {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .activity .label {
+        font-size: 1rem;
+    }
+
+    .activity .stats, .activity .desc {
+        font-size: 0.875rem;
+    }
+
+    .modal {
+        width: 100%;
+        padding: 0;
+    }
+}
